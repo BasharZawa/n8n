@@ -22,27 +22,13 @@ export const saleOrderOperations: INodeProperties[] = [
 export const saleOrderDescription: INodeProperties[] = [
 	// ── create ──
 	{
-		displayName: 'Partner Name or ID',
-		name: 'partnerId',
-		type: 'options',
-		default: '',
+		displayName: 'Fields (JSON)',
+		name: 'fieldsJson',
+		type: 'json',
+		default: '{\n  "partner_id": 0\n}',
 		required: true,
-		description: 'Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>',
-		typeOptions: { loadOptionsMethod: 'getPartners' },
+		description: 'JSON object with Odoo field names and values. Map from previous nodes using expressions. Common fields: partner_id, date_order, user_id, team_id, pricelist_id, payment_term_id, client_order_ref, origin, note.',
 		displayOptions: { show: { operation: ['create'], resource: ['saleOrder'] } },
-	},
-	{
-		displayName: 'Additional Fields',
-		name: 'additionalFields',
-		type: 'collection',
-		default: {},
-		placeholder: 'Add Field',
-		displayOptions: { show: { operation: ['create'], resource: ['saleOrder'] } },
-		options: [
-			{ displayName: 'Date Order', name: 'date_order', type: 'dateTime', default: '' },
-			{ displayName: 'Note', name: 'note', type: 'string', default: '' },
-			{ displayName: 'Client Reference', name: 'client_order_ref', type: 'string', default: '' },
-		],
 	},
 
 	// ── get / delete ──
@@ -71,16 +57,12 @@ export const saleOrderDescription: INodeProperties[] = [
 		displayOptions: { show: { operation: ['update'], resource: ['saleOrder'] } },
 	},
 	{
-		displayName: 'Update Fields',
-		name: 'updateFields',
-		type: 'collection',
-		default: {},
-		placeholder: 'Add Field',
+		displayName: 'Fields (JSON)',
+		name: 'fieldsJson',
+		type: 'json',
+		default: '{}',
+		required: true,
+		description: 'JSON object with Odoo field names and values to update.',
 		displayOptions: { show: { operation: ['update'], resource: ['saleOrder'] } },
-		options: [
-			{ displayName: 'Date Order', name: 'date_order', type: 'dateTime', default: '' },
-			{ displayName: 'Note', name: 'note', type: 'string', default: '' },
-			{ displayName: 'Client Reference', name: 'client_order_ref', type: 'string', default: '' },
-		],
 	},
 ];

@@ -35,7 +35,6 @@ import {
 	odooGetAll,
 	odooGetModelFields,
 	odooGetModels,
-	odooSearchRead,
 	odooUpdate,
 	odooExecuteMethod,
 	processNameValueFields,
@@ -144,54 +143,6 @@ export class OdooGeneric implements INodeType {
 					}))
 					.sort((a, b) => a.name.localeCompare(b.name));
 			},
-
-			async getPartners(this: ILoadOptionsFunctions): Promise<INodePropertyOptions[]> {
-				const credentials =
-					(await this.getCredentials('odooGenericApi')) as unknown as IOdooCredentials;
-				const partners = await odooSearchRead.call(this, credentials, 'res.partner', [
-					'id',
-					'name',
-				]);
-				return partners
-					.map((p) => ({ name: p.name as string, value: p.id as number }))
-					.sort((a, b) => a.name.localeCompare(b.name));
-			},
-
-			async getStages(this: ILoadOptionsFunctions): Promise<INodePropertyOptions[]> {
-				const credentials =
-					(await this.getCredentials('odooGenericApi')) as unknown as IOdooCredentials;
-				const stages = await odooSearchRead.call(this, credentials, 'crm.stage', [
-					'id',
-					'name',
-				]);
-				return stages
-					.map((s) => ({ name: s.name as string, value: s.id as number }))
-					.sort((a, b) => a.name.localeCompare(b.name));
-			},
-
-			async getCountries(this: ILoadOptionsFunctions): Promise<INodePropertyOptions[]> {
-				const credentials =
-					(await this.getCredentials('odooGenericApi')) as unknown as IOdooCredentials;
-				const countries = await odooSearchRead.call(this, credentials, 'res.country', [
-					'id',
-					'name',
-				]);
-				return countries
-					.map((c) => ({ name: c.name as string, value: c.id as number }))
-					.sort((a, b) => a.name.localeCompare(b.name));
-			},
-
-			async getStates(this: ILoadOptionsFunctions): Promise<INodePropertyOptions[]> {
-				const credentials =
-					(await this.getCredentials('odooGenericApi')) as unknown as IOdooCredentials;
-				const states = await odooSearchRead.call(this, credentials, 'res.country.state', [
-					'id',
-					'name',
-				]);
-				return states
-					.map((s) => ({ name: s.name as string, value: s.id as number }))
-					.sort((a, b) => a.name.localeCompare(b.name));
-			},
 		},
 
 		credentialTest: {
@@ -229,7 +180,6 @@ export class OdooGeneric implements INodeType {
 			try {
 				let responseData: IDataObject | IDataObject[] | undefined;
 
-				// Resolve model name
 				const model =
 					resource === 'custom'
 						? (this.getNodeParameter('customModel', i) as string)
@@ -237,140 +187,54 @@ export class OdooGeneric implements INodeType {
 
 				if (operation === 'create') {
 					let fields: IDataObject;
-					if (resource === 'contact') {
-						const name = this.getNodeParameter('contactName', i) as string;
-						let additionalFields = this.getNodeParameter(
-							'additionalFields',
-							i,
-						) as IDataObject;
-						if (additionalFields.address) {
-							const addressFields = (additionalFields.address as IDataObject)
-								.value as IDataObject;
-							if (addressFields) {
-								additionalFields = { ...additionalFields, ...addressFields };
-							}
-							delete additionalFields.address;
-						}
-						fields = { name, ...additionalFields };
-					} else if (resource === 'lead') {
-						const name = this.getNodeParameter('leadName', i) as string;
-						const additionalFields = this.getNodeParameter(
-							'additionalFields',
-							i,
-						) as IDataObject;
-						fields = { name, ...additionalFields };
-					} else if (resource === 'saleOrder') {
-						const partnerId = this.getNodeParameter('partnerId', i);
-						const additionalFields = this.getNodeParameter(
-							'additionalFields',
-							i,
-						) as IDataObject;
-						fields = { partner_id: partnerId, ...additionalFields };
-					} else {
-						// custom
-						const rawFields = this.getNodeParameter(
-							'fieldsToCreateOrUpdate',
-							i,
-						) as IDataObject;
+					if (resource === 'custom') {
+						const rawFields = this.getNodeParameter('fieldsToCreateOrUpdate', i) as IDataObject;
 						fields = processNameValueFields(rawFields);
+					} else {
+						const raw = this.getNodeParameter('fieldsJson', i);
+						fields = typeof raw === 'string' ? JSON.parse(raw) as IDataObject : raw as IDataObject;
 					}
 					responseData = await odooCreate.call(this, credentials, model, fields);
 				}
 
 				if (operation === 'get') {
-					const recordId = this.getNodeParameter(
-						getRecordIdParam(resource),
-						i,
-					) as string;
+					const recordId = this.getNodeParameter(getRecordIdParam(resource), i) as string;
 					const options = this.getNodeParameter('options', i, {}) as IDataObject;
 					const fieldsList = (options.fieldsList as string[]) || [];
-					responseData = await odooGet.call(
-						this,
-						credentials,
-						model,
-						recordId,
-						fieldsList,
-					);
+					responseData = await odooGet.call(this, credentials, model, recordId, fieldsList);
 				}
 
 				if (operation === 'getAll') {
 					const returnAll = this.getNodeParameter('returnAll', i) as boolean;
-					const limit = returnAll
-						? 0
-						: (this.getNodeParameter('limit', i) as number);
+					const limit = returnAll ? 0 : (this.getNodeParameter('limit', i) as number);
 					const options = this.getNodeParameter('options', i, {}) as IDataObject;
 					const fieldsList = (options.fieldsList as string[]) || [];
-					const filters = this.getNodeParameter(
-						'filterRequest',
-						i,
-						{},
-					) as IOdooFilterOperations;
-					responseData = await odooGetAll.call(
-						this,
-						credentials,
-						model,
-						filters,
-						fieldsList,
-						limit,
-					);
+					const filters = this.getNodeParameter('filterRequest', i, {}) as IOdooFilterOperations;
+					responseData = await odooGetAll.call(this, credentials, model, filters, fieldsList, limit);
 				}
 
 				if (operation === 'update') {
-					const recordId = this.getNodeParameter(
-						getRecordIdParam(resource),
-						i,
-					) as string;
+					const recordId = this.getNodeParameter(getRecordIdParam(resource), i) as string;
 					let fields: IDataObject;
-					if (resource === 'contact') {
-						let updateFields = this.getNodeParameter(
-							'updateFields',
-							i,
-						) as IDataObject;
-						if (updateFields.address) {
-							const addressFields = (updateFields.address as IDataObject)
-								.value as IDataObject;
-							if (addressFields) {
-								updateFields = { ...updateFields, ...addressFields };
-							}
-							delete updateFields.address;
-						}
-						fields = updateFields;
-					} else if (resource === 'lead') {
-						fields = this.getNodeParameter('updateFields', i) as IDataObject;
-					} else if (resource === 'saleOrder') {
-						fields = this.getNodeParameter('updateFields', i) as IDataObject;
-					} else {
-						const rawFields = this.getNodeParameter(
-							'fieldsToCreateOrUpdate',
-							i,
-						) as IDataObject;
+					if (resource === 'custom') {
+						const rawFields = this.getNodeParameter('fieldsToCreateOrUpdate', i) as IDataObject;
 						fields = processNameValueFields(rawFields);
+					} else {
+						const raw = this.getNodeParameter('fieldsJson', i);
+						fields = typeof raw === 'string' ? JSON.parse(raw) as IDataObject : raw as IDataObject;
 					}
-					responseData = await odooUpdate.call(
-						this,
-						credentials,
-						model,
-						recordId,
-						fields,
-					);
+					responseData = await odooUpdate.call(this, credentials, model, recordId, fields);
 				}
 
 				if (operation === 'delete') {
-					const recordId = this.getNodeParameter(
-						getRecordIdParam(resource),
-						i,
-					) as string;
+					const recordId = this.getNodeParameter(getRecordIdParam(resource), i) as string;
 					responseData = await odooDelete.call(this, credentials, model, recordId);
 				}
 
 				if (operation === 'executeMethod') {
 					const methodName = this.getNodeParameter('methodName', i) as string;
 					const recordId = this.getNodeParameter('recordId', i, '') as string;
-					const methodArgsRaw = this.getNodeParameter(
-						'methodArgs',
-						i,
-						'[]',
-					) as string;
+					const methodArgsRaw = this.getNodeParameter('methodArgs', i, '[]') as string;
 					let methodArgs: unknown[];
 					try {
 						methodArgs = JSON.parse(methodArgsRaw) as unknown[];
@@ -378,12 +242,7 @@ export class OdooGeneric implements INodeType {
 						methodArgs = [];
 					}
 					responseData = await odooExecuteMethod.call(
-						this,
-						credentials,
-						model,
-						methodName,
-						recordId || undefined,
-						methodArgs,
+						this, credentials, model, methodName, recordId || undefined, methodArgs,
 					);
 				}
 
