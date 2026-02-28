@@ -1,0 +1,14 @@
+{
+	"node": "n8n-nodes-odoo-generic.odooGeneric",
+	"nodeVersion": "1.0",
+	"codexVersion": "1.0",
+	"categories": ["Data & Storage"],
+	"resources": {
+		"primaryDocumentation": [
+			{
+				"url": "https://www.odoo.com/documentation/18.0/developer/reference/external_api.html"
+			}
+		]
+	},
+	"alias": ["ERP", "Odoo", "CRM", "Sales", "Contacts", "Leads"]
+}

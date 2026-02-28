@@ -1,0 +1,37 @@
+{
+  "name": "n8n-nodes-odoo-generic",
+  "version": "0.1.0",
+  "description": "n8n community node for generic Odoo ERP integration (v14-19) with JSON-2 API + JSON-RPC support",
+  "license": "MIT",
+  "keywords": [
+    "n8n-community-node-package"
+  ],
+  "scripts": {
+    "build": "tsc --build tsconfig.json",
+    "test": "jest",
+    "lint": "tsc --noEmit"
+  },
+  "files": [
+    "dist"
+  ],
+  "n8n": {
+    "n8nNodesApiVersion": 1,
+    "credentials": [
+      "dist/credentials/OdooGenericApi.credentials.js"
+    ],
+    "nodes": [
+      "dist/nodes/OdooGeneric/OdooGeneric.node.js"
+    ]
+  },
+  "devDependencies": {
+    "change-case": "^4.1.2",
+    "typescript": "5.9.2",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.1.0",
+    "@types/jest": "^29.5.0",
+    "n8n-workflow": "workspace:*"
+  },
+  "peerDependencies": {
+    "n8n-workflow": "workspace:*"
+  }
+}

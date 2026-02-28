@@ -4,6 +4,7 @@ packages:
   - packages/frontend/**
   - packages/extensions/**
   - packages/testing/**
+  - n8n-nodes-odoo-generic
 
 catalog:
   '@codemirror/autocomplete': 6.20.0

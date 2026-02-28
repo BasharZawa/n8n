@@ -1,0 +1,1084 @@
+• turbo 2.8.9
+• Packages in scope: n8n
+• Running build in 1 packages
+• Remote caching disabled
+@n8n/di:build: cache hit, replaying logs 0ea14bd2eabde178
+@n8n/di:build: 
+@n8n/di:build: > @n8n/di@0.10.0 build /home/bashar/claudeProjects/n8n/packages/@n8n/di
+@n8n/di:build: > tsc -p tsconfig.build.json
+@n8n/di:build: 
+@n8n/stylelint-config:build: cache hit, replaying logs 4cfacbfee02ba30b
+@n8n/stylelint-config:build: 
+@n8n/stylelint-config:build: > @n8n/stylelint-config@0.0.1 build /home/bashar/claudeProjects/n8n/packages/@n8n/stylelint-config
+@n8n/stylelint-config:build: > tsc
+@n8n/stylelint-config:build: 
+@n8n/json-schema-to-zod:build: cache hit, replaying logs db69798b60fba49b
+@n8n/json-schema-to-zod:build: 
+@n8n/json-schema-to-zod:build: > @n8n/json-schema-to-zod@1.6.0 build /home/bashar/claudeProjects/n8n/packages/@n8n/json-schema-to-zod
+@n8n/json-schema-to-zod:build: > rimraf ./dist && pnpm run build:types && pnpm run build:cjs && pnpm run build:esm
+@n8n/json-schema-to-zod:build: 
+@n8n/json-schema-to-zod:build: 
+@n8n/json-schema-to-zod:build: > @n8n/json-schema-to-zod@1.6.0 build:types /home/bashar/claudeProjects/n8n/packages/@n8n/json-schema-to-zod
+@n8n/json-schema-to-zod:build: > tsc -p tsconfig.types.json
+@n8n/json-schema-to-zod:build: 
+@n8n/json-schema-to-zod:build: 
+@n8n/json-schema-to-zod:build: > @n8n/json-schema-to-zod@1.6.0 build:cjs /home/bashar/claudeProjects/n8n/packages/@n8n/json-schema-to-zod
+@n8n/json-schema-to-zod:build: > tsc -p tsconfig.cjs.json && node postcjs.cjs
+@n8n/json-schema-to-zod:build: 
+@n8n/json-schema-to-zod:build: 
+@n8n/json-schema-to-zod:build: > @n8n/json-schema-to-zod@1.6.0 build:esm /home/bashar/claudeProjects/n8n/packages/@n8n/json-schema-to-zod
+@n8n/json-schema-to-zod:build: > tsc -p tsconfig.esm.json && node postesm.cjs
+@n8n/json-schema-to-zod:build: 
+@n8n/syslog-client:build: cache hit, replaying logs f24c2bebdc686eb1
+@n8n/syslog-client:build: 
+@n8n/syslog-client:build: > @n8n/syslog-client@1.2.0 build /home/bashar/claudeProjects/n8n/packages/@n8n/syslog-client
+@n8n/syslog-client:build: > tsc -p tsconfig.build.json
+@n8n/syslog-client:build: 
+@n8n/client-oauth2:build: cache hit, replaying logs 7316eb28fd5adac7
+@n8n/client-oauth2:build: 
+@n8n/client-oauth2:build: > @n8n/client-oauth2@1.0.0-rc.0 build /home/bashar/claudeProjects/n8n/packages/@n8n/client-oauth2
+@n8n/client-oauth2:build: > tsc -p tsconfig.build.json
+@n8n/client-oauth2:build: 
+@n8n/permissions:build: cache hit, replaying logs cfde5d6e618f50ed
+@n8n/permissions:build: 
+@n8n/permissions:build: > @n8n/permissions@0.51.0 build /home/bashar/claudeProjects/n8n/packages/@n8n/permissions
+@n8n/permissions:build: > tsc -p tsconfig.build.json
+@n8n/permissions:build: 
+@n8n/vitest-config:build: cache hit, replaying logs fb2ab0c76bef1c76
+@n8n/vitest-config:build: 
+@n8n/vitest-config:build: > @n8n/vitest-config@1.7.0 build /home/bashar/claudeProjects/n8n/packages/@n8n/vitest-config
+@n8n/vitest-config:build: > tsc -p tsconfig.build.json
+@n8n/vitest-config:build: 
+@n8n/constants:build: cache hit, replaying logs 4683a51641c40f0e
+@n8n/constants:build: 
+@n8n/constants:build: > @n8n/constants@0.19.0 build /home/bashar/claudeProjects/n8n/packages/@n8n/constants
+@n8n/constants:build: > tsc -p tsconfig.build.json
+@n8n/constants:build: 
+@n8n/errors:build: cache hit, replaying logs 80b7b11021c94fb0
+@n8n/errors:build: 
+@n8n/errors:build: > @n8n/errors@0.6.0 build /home/bashar/claudeProjects/n8n/packages/@n8n/errors
+@n8n/errors:build: > tsc -p tsconfig.build.json
+@n8n/errors:build: 
+@n8n/imap:build: cache hit, replaying logs cb65aea74437daa2
+@n8n/imap:build: 
+@n8n/imap:build: > @n8n/imap@0.16.0 build /home/bashar/claudeProjects/n8n/packages/@n8n/imap
+@n8n/imap:build: > tsc -p tsconfig.build.json
+@n8n/imap:build: 
+@n8n/codemirror-lang-html:build: cache hit, replaying logs 4c8cb5c329621ccf
+@n8n/codemirror-lang-html:build: 
+@n8n/codemirror-lang-html:build: > @n8n/codemirror-lang-html@1.3.0 build /home/bashar/claudeProjects/n8n/packages/@n8n/codemirror-lang-html
+@n8n/codemirror-lang-html:build: > cm-buildhelper src/html.ts
+@n8n/codemirror-lang-html:build: 
+@n8n/eslint-plugin-community-nodes:build: cache hit, replaying logs 44491c76343d430b
+@n8n/eslint-plugin-community-nodes:build: 
+@n8n/eslint-plugin-community-nodes:build: > @n8n/eslint-plugin-community-nodes@0.8.0 build /home/bashar/claudeProjects/n8n/packages/@n8n/eslint-plugin-community-nodes
+@n8n/eslint-plugin-community-nodes:build: > tsc --project tsconfig.build.json
+@n8n/eslint-plugin-community-nodes:build: 
+@n8n/config:build: cache hit, replaying logs 12088a6001dae96a
+@n8n/config:build: 
+@n8n/config:build: > @n8n/config@2.9.0 build /home/bashar/claudeProjects/n8n/packages/@n8n/config
+@n8n/config:build: > tsc -p tsconfig.build.json
+@n8n/config:build: 
+@n8n/codemirror-lang:build: cache hit, replaying logs 7211129862d96dbe
+@n8n/codemirror-lang:build: 
+@n8n/codemirror-lang:build: > @n8n/codemirror-lang@0.5.0 build /home/bashar/claudeProjects/n8n/packages/@n8n/codemirror-lang
+@n8n/codemirror-lang:build: > tsc -p tsconfig.build.json
+@n8n/codemirror-lang:build: 
+@n8n/eslint-config:build: cache hit, replaying logs e134e235d5ffdb89
+@n8n/eslint-config:build: 
+@n8n/eslint-config:build: > @n8n/eslint-config@0.0.1 build /home/bashar/claudeProjects/n8n/packages/@n8n/eslint-config
+@n8n/eslint-config:build: > tsc
+@n8n/eslint-config:build: 
+@n8n/codemirror-lang-sql:build: cache hit, replaying logs 5cba0c0d9113a6d2
+@n8n/codemirror-lang-sql:build: 
+@n8n/codemirror-lang-sql:build: > @n8n/codemirror-lang-sql@1.5.0 build /home/bashar/claudeProjects/n8n/packages/@n8n/codemirror-lang-sql
+@n8n/codemirror-lang-sql:build: > tsc -p tsconfig.build.json
+@n8n/codemirror-lang-sql:build: 
+@n8n/composables:build: cache hit, replaying logs 05238c8ca6248992
+@n8n/composables:build: 
+@n8n/composables:build: > @n8n/composables@1.14.0 build /home/bashar/claudeProjects/n8n/packages/frontend/@n8n/composables
+@n8n/composables:build: > tsdown
+@n8n/composables:build: 
+@n8n/composables:build: ℹ tsdown v0.16.5 powered by rolldown v1.0.0-beta.50
+@n8n/composables:build: ℹ Using tsdown config: /home/bashar/claudeProjects/n8n/packages/frontend/@n8n/composables/tsdown.config.ts
+@n8n/composables:build: ℹ entry: src/useDeviceSupport.ts, src/useDocumentTitle.ts, src/useShortKeyPress.ts, src/useThrottleWithReactiveDelay.ts
+@n8n/composables:build: ℹ tsconfig: tsconfig.json
+@n8n/composables:build: ℹ Build start
+@n8n/composables:build: ℹ [CJS] dist/useDeviceSupport.cjs                  1.76 kB │ gzip: 0.70 kB
+@n8n/composables:build: ℹ [CJS] dist/useDocumentTitle.cjs                  1.22 kB │ gzip: 0.59 kB
+@n8n/composables:build: ℹ [CJS] dist/useShortKeyPress.cjs                  0.64 kB │ gzip: 0.33 kB
+@n8n/composables:build: ℹ [CJS] dist/useThrottleWithReactiveDelay.cjs      0.61 kB │ gzip: 0.33 kB
+@n8n/composables:build: ℹ [CJS] dist/useDocumentTitle.cjs.map              2.59 kB │ gzip: 1.15 kB
+@n8n/composables:build: ℹ [CJS] dist/useDeviceSupport.cjs.map              2.58 kB │ gzip: 1.07 kB
+@n8n/composables:build: ℹ [CJS] dist/useShortKeyPress.cjs.map              1.26 kB │ gzip: 0.64 kB
+@n8n/composables:build: ℹ [CJS] dist/useThrottleWithReactiveDelay.cjs.map  0.88 kB │ gzip: 0.49 kB
+@n8n/composables:build: ℹ [CJS] 8 files, total: 11.54 kB
+@n8n/composables:build: ℹ [ESM] dist/useDeviceSupport.mjs                  1.68 kB │ gzip: 0.69 kB
+@n8n/composables:build: ℹ [ESM] dist/useDocumentTitle.mjs                  1.19 kB │ gzip: 0.57 kB
+@n8n/composables:build: ℹ [ESM] dist/useShortKeyPress.mjs                  0.57 kB │ gzip: 0.32 kB
+@n8n/composables:build: ℹ [ESM] dist/useThrottleWithReactiveDelay.mjs      0.56 kB │ gzip: 0.31 kB
+@n8n/composables:build: ℹ [ESM] dist/useDeviceSupport.mjs.map              2.62 kB │ gzip: 1.07 kB
+@n8n/composables:build: ℹ [ESM] dist/useDocumentTitle.mjs.map              2.59 kB │ gzip: 1.15 kB
+@n8n/composables:build: ℹ [ESM] dist/useShortKeyPress.mjs.map              1.27 kB │ gzip: 0.64 kB
+@n8n/composables:build: ℹ [ESM] dist/useThrottleWithReactiveDelay.mjs.map  0.89 kB │ gzip: 0.48 kB
+@n8n/composables:build: ℹ [ESM] dist/useDocumentTitle.d.mts                0.67 kB │ gzip: 0.35 kB
+@n8n/composables:build: ℹ [ESM] dist/useDeviceSupport.d.mts                0.47 kB │ gzip: 0.29 kB
+@n8n/composables:build: ℹ [ESM] dist/useShortKeyPress.d.mts                0.41 kB │ gzip: 0.25 kB
+@n8n/composables:build: ℹ [ESM] dist/useThrottleWithReactiveDelay.d.mts    0.30 kB │ gzip: 0.19 kB
+@n8n/composables:build: ℹ [ESM] 12 files, total: 13.23 kB
+@n8n/composables:build: ℹ [CJS] dist/useDocumentTitle.d.cts              0.67 kB │ gzip: 0.35 kB
+@n8n/composables:build: ℹ [CJS] dist/useDeviceSupport.d.cts              0.47 kB │ gzip: 0.29 kB
+@n8n/composables:build: ℹ [CJS] dist/useShortKeyPress.d.cts              0.41 kB │ gzip: 0.25 kB
+@n8n/composables:build: ℹ [CJS] dist/useThrottleWithReactiveDelay.d.cts  0.30 kB │ gzip: 0.19 kB
+@n8n/composables:build: ℹ [CJS] 4 files, total: 1.85 kB
+@n8n/composables:build: ✔ Build complete in 8201ms
+@n8n/utils:build: cache hit, replaying logs 66acb1206f07db5e
+@n8n/utils:build: 
+@n8n/utils:build: > @n8n/utils@1.25.0 build /home/bashar/claudeProjects/n8n/packages/@n8n/utils
+@n8n/utils:build: > tsdown
+@n8n/utils:build: 
+@n8n/utils:build: ℹ tsdown v0.16.5 powered by rolldown v1.0.0-beta.50
+@n8n/utils:build: ℹ Using tsdown config: /home/bashar/claudeProjects/n8n/packages/@n8n/utils/tsdown.config.ts
+@n8n/utils:build: ℹ entry: src/assert.ts, src/event-bus.ts, src/event-queue.ts, src/index.ts, src/retry.ts, src/workflowId.ts, src/files/path.ts, src/files/sanitize.ts, src/number/smartDecimal.ts, src/search/reRankSearchResults.ts, src/search/sublimeSearch.ts, src/sort/sortByProperty.ts, src/string/truncate.ts
+@n8n/utils:build: ℹ tsconfig: tsconfig.json
+@n8n/utils:build: ℹ Build start
+@n8n/utils:build: ℹ [CJS] dist/index.cjs                        1.49 kB │ gzip: 0.38 kB
+@n8n/utils:build: ℹ [CJS] dist/search/sublimeSearch.cjs         0.18 kB │ gzip: 0.10 kB
+@n8n/utils:build: ℹ [CJS] dist/string/truncate.cjs              0.17 kB │ gzip: 0.09 kB
+@n8n/utils:build: ℹ [CJS] dist/search/reRankSearchResults.cjs   0.15 kB │ gzip: 0.09 kB
+@n8n/utils:build: ℹ [CJS] dist/sort/sortByProperty.cjs          0.13 kB │ gzip: 0.08 kB
+@n8n/utils:build: ℹ [CJS] dist/event-queue.cjs                  0.12 kB │ gzip: 0.09 kB
+@n8n/utils:build: ℹ [CJS] dist/number/smartDecimal.cjs          0.12 kB │ gzip: 0.08 kB
+@n8n/utils:build: ℹ [CJS] dist/workflowId.cjs                   0.12 kB │ gzip: 0.09 kB
+@n8n/utils:build: ℹ [CJS] dist/files/sanitize.cjs               0.12 kB │ gzip: 0.09 kB
+@n8n/utils:build: ℹ [CJS] dist/event-bus.cjs                    0.11 kB │ gzip: 0.09 kB
+@n8n/utils:build: ℹ [CJS] dist/files/path.cjs                   0.10 kB │ gzip: 0.09 kB
+@n8n/utils:build: ℹ [CJS] dist/assert.cjs                       0.09 kB │ gzip: 0.07 kB
+@n8n/utils:build: ℹ [CJS] dist/retry.cjs                        0.08 kB │ gzip: 0.07 kB
+@n8n/utils:build: ℹ [CJS] dist/sublimeSearch.cjs.map           11.66 kB │ gzip: 3.92 kB
+@n8n/utils:build: ℹ [CJS] dist/sublimeSearch.cjs                5.53 kB │ gzip: 1.80 kB
+@n8n/utils:build: ℹ [CJS] dist/event-bus2.cjs.map               2.93 kB │ gzip: 0.99 kB
+@n8n/utils:build: ℹ [CJS] dist/sanitize.cjs.map                 2.91 kB │ gzip: 1.25 kB
+@n8n/utils:build: ℹ [CJS] dist/truncate.cjs.map                 2.60 kB │ gzip: 1.08 kB
+@n8n/utils:build: ℹ [CJS] dist/retry2.cjs.map                   2.35 kB │ gzip: 1.05 kB
+@n8n/utils:build: ℹ [CJS] dist/sanitize.cjs                     1.91 kB │ gzip: 0.90 kB
+@n8n/utils:build: ℹ [CJS] dist/event-queue2.cjs.map             1.75 kB │ gzip: 0.83 kB
+@n8n/utils:build: ℹ [CJS] dist/truncate.cjs                     1.67 kB │ gzip: 0.70 kB
+@n8n/utils:build: ℹ [CJS] dist/retry2.cjs                       1.54 kB │ gzip: 0.71 kB
+@n8n/utils:build: ℹ [CJS] dist/reRankSearchResults.cjs.map      1.27 kB │ gzip: 0.63 kB
+@n8n/utils:build: ℹ [CJS] dist/event-bus2.cjs                   1.11 kB │ gzip: 0.52 kB
+@n8n/utils:build: ℹ [CJS] dist/event-queue2.cjs                 1.10 kB │ gzip: 0.53 kB
+@n8n/utils:build: ℹ [CJS] dist/workflowId2.cjs.map              0.82 kB │ gzip: 0.48 kB
+@n8n/utils:build: ℹ [CJS] dist/workflowId2.cjs                  0.81 kB │ gzip: 0.49 kB
+@n8n/utils:build: ℹ [CJS] dist/sortByProperty.cjs.map           0.67 kB │ gzip: 0.41 kB
+@n8n/utils:build: ℹ [CJS] dist/reRankSearchResults.cjs          0.65 kB │ gzip: 0.34 kB
+@n8n/utils:build: ℹ [CJS] dist/smartDecimal.cjs.map             0.63 kB │ gzip: 0.37 kB
+@n8n/utils:build: ℹ [CJS] dist/sortByProperty.cjs               0.47 kB │ gzip: 0.30 kB
+@n8n/utils:build: ℹ [CJS] dist/assert2.cjs.map                  0.46 kB │ gzip: 0.33 kB
+@n8n/utils:build: ℹ [CJS] dist/smartDecimal.cjs                 0.42 kB │ gzip: 0.28 kB
+@n8n/utils:build: ℹ [CJS] dist/path.cjs                         0.37 kB │ gzip: 0.28 kB
+@n8n/utils:build: ℹ [CJS] dist/path.cjs.map                     0.36 kB │ gzip: 0.28 kB
+@n8n/utils:build: ℹ [CJS] dist/assert2.cjs                      0.32 kB │ gzip: 0.24 kB
+@n8n/utils:build: ℹ [CJS] 37 files, total: 47.31 kB
+@n8n/utils:build: ℹ [ESM] dist/index.mjs                          0.93 kB │ gzip: 0.32 kB
+@n8n/utils:build: ℹ [ESM] dist/search/sublimeSearch.mjs           0.12 kB │ gzip: 0.10 kB
+@n8n/utils:build: ℹ [ESM] dist/string/truncate.mjs                0.12 kB │ gzip: 0.09 kB
+@n8n/utils:build: ℹ [ESM] dist/search/reRankSearchResults.mjs     0.10 kB │ gzip: 0.08 kB
+@n8n/utils:build: ℹ [ESM] dist/event-queue.mjs                    0.09 kB │ gzip: 0.08 kB
+@n8n/utils:build: ℹ [ESM] dist/sort/sortByProperty.mjs            0.09 kB │ gzip: 0.08 kB
+@n8n/utils:build: ℹ [ESM] dist/files/sanitize.mjs                 0.09 kB │ gzip: 0.08 kB
+@n8n/utils:build: ℹ [ESM] dist/files/path.mjs                     0.08 kB │ gzip: 0.08 kB
+@n8n/utils:build: ℹ [ESM] dist/workflowId.mjs                     0.08 kB │ gzip: 0.09 kB
+@n8n/utils:build: ℹ [ESM] dist/event-bus.mjs                      0.08 kB │ gzip: 0.08 kB
+@n8n/utils:build: ℹ [ESM] dist/number/smartDecimal.mjs            0.08 kB │ gzip: 0.07 kB
+@n8n/utils:build: ℹ [ESM] dist/assert.mjs                         0.06 kB │ gzip: 0.07 kB
+@n8n/utils:build: ℹ [ESM] dist/retry.mjs                          0.06 kB │ gzip: 0.07 kB
+@n8n/utils:build: ℹ [ESM] dist/sublimeSearch.mjs.map             11.66 kB │ gzip: 3.92 kB
+@n8n/utils:build: ℹ [ESM] dist/sublimeSearch.mjs                  5.33 kB │ gzip: 1.75 kB
+@n8n/utils:build: ℹ [ESM] dist/event-bus2.mjs.map                 2.93 kB │ gzip: 0.99 kB
+@n8n/utils:build: ℹ [ESM] dist/sanitize.mjs.map                   2.91 kB │ gzip: 1.25 kB
+@n8n/utils:build: ℹ [ESM] dist/truncate.mjs.map                   2.60 kB │ gzip: 1.08 kB
+@n8n/utils:build: ℹ [ESM] dist/retry2.mjs.map                     2.35 kB │ gzip: 1.05 kB
+@n8n/utils:build: ℹ [ESM] dist/sanitize.mjs                       1.82 kB │ gzip: 0.84 kB
+@n8n/utils:build: ℹ [ESM] dist/event-queue2.mjs.map               1.75 kB │ gzip: 0.83 kB
+@n8n/utils:build: ℹ [ESM] dist/truncate.mjs                       1.47 kB │ gzip: 0.65 kB
+@n8n/utils:build: ℹ [ESM] dist/retry2.mjs                         1.45 kB │ gzip: 0.67 kB
+@n8n/utils:build: ℹ [ESM] dist/reRankSearchResults.mjs.map        1.27 kB │ gzip: 0.63 kB
+@n8n/utils:build: ℹ [ESM] dist/event-bus2.mjs                     1.02 kB │ gzip: 0.47 kB
+@n8n/utils:build: ℹ [ESM] dist/event-queue2.mjs                   1.00 kB │ gzip: 0.48 kB
+@n8n/utils:build: ℹ [ESM] dist/workflowId2.mjs.map                0.81 kB │ gzip: 0.48 kB
+@n8n/utils:build: ℹ [ESM] dist/workflowId2.mjs                    0.69 kB │ gzip: 0.43 kB
+@n8n/utils:build: ℹ [ESM] dist/sortByProperty.mjs.map             0.67 kB │ gzip: 0.41 kB
+@n8n/utils:build: ℹ [ESM] dist/smartDecimal.mjs.map               0.63 kB │ gzip: 0.37 kB
+@n8n/utils:build: ℹ [ESM] dist/reRankSearchResults.mjs            0.55 kB │ gzip: 0.30 kB
+@n8n/utils:build: ℹ [ESM] dist/assert2.mjs.map                    0.46 kB │ gzip: 0.33 kB
+@n8n/utils:build: ℹ [ESM] dist/sortByProperty.mjs                 0.38 kB │ gzip: 0.25 kB
+@n8n/utils:build: ℹ [ESM] dist/path.mjs.map                       0.36 kB │ gzip: 0.28 kB
+@n8n/utils:build: ℹ [ESM] dist/smartDecimal.mjs                   0.33 kB │ gzip: 0.22 kB
+@n8n/utils:build: ℹ [ESM] dist/path.mjs                           0.27 kB │ gzip: 0.22 kB
+@n8n/utils:build: ℹ [ESM] dist/assert2.mjs                        0.24 kB │ gzip: 0.19 kB
+@n8n/utils:build: ℹ [ESM] dist/index.d.mts                        0.98 kB │ gzip: 0.34 kB
+@n8n/utils:build: ℹ [ESM] dist/event-bus.d.mts                    0.14 kB │ gzip: 0.11 kB
+@n8n/utils:build: ℹ [ESM] dist/search/sublimeSearch.d.mts         0.12 kB │ gzip: 0.10 kB
+@n8n/utils:build: ℹ [ESM] dist/string/truncate.d.mts              0.11 kB │ gzip: 0.09 kB
+@n8n/utils:build: ℹ [ESM] dist/search/reRankSearchResults.d.mts   0.10 kB │ gzip: 0.08 kB
+@n8n/utils:build: ℹ [ESM] dist/event-queue.d.mts                  0.09 kB │ gzip: 0.08 kB
+@n8n/utils:build: ℹ [ESM] dist/sort/sortByProperty.d.mts          0.09 kB │ gzip: 0.08 kB
+@n8n/utils:build: ℹ [ESM] dist/files/sanitize.d.mts               0.09 kB │ gzip: 0.08 kB
+@n8n/utils:build: ℹ [ESM] dist/files/path.d.mts                   0.08 kB │ gzip: 0.08 kB
+@n8n/utils:build: ℹ [ESM] dist/workflowId.d.mts                   0.08 kB │ gzip: 0.08 kB
+@n8n/utils:build: ℹ [ESM] dist/number/smartDecimal.d.mts          0.08 kB │ gzip: 0.07 kB
+@n8n/utils:build: ℹ [ESM] dist/assert.d.mts                       0.06 kB │ gzip: 0.07 kB
+@n8n/utils:build: ℹ [ESM] dist/retry.d.mts                        0.06 kB │ gzip: 0.07 kB
+@n8n/utils:build: ℹ [ESM] dist/event-bus2.d.mts                   0.99 kB │ gzip: 0.35 kB
+@n8n/utils:build: ℹ [ESM] dist/sublimeSearch.d.mts                0.39 kB │ gzip: 0.25 kB
+@n8n/utils:build: ℹ [ESM] dist/reRankSearchResults.d.mts          0.37 kB │ gzip: 0.22 kB
+@n8n/utils:build: ℹ [ESM] dist/truncate.d.mts                     0.31 kB │ gzip: 0.19 kB
+@n8n/utils:build: ℹ [ESM] dist/retry2.d.mts                       0.28 kB │ gzip: 0.22 kB
+@n8n/utils:build: ℹ [ESM] dist/event-queue2.d.mts                 0.24 kB │ gzip: 0.18 kB
+@n8n/utils:build: ℹ [ESM] dist/sortByProperty.d.mts               0.22 kB │ gzip: 0.17 kB
+@n8n/utils:build: ℹ [ESM] dist/sanitize.d.mts                     0.20 kB │ gzip: 0.16 kB
+@n8n/utils:build: ℹ [ESM] dist/smartDecimal.d.mts                 0.20 kB │ gzip: 0.15 kB
+@n8n/utils:build: ℹ [ESM] dist/assert2.d.mts                      0.18 kB │ gzip: 0.15 kB
+@n8n/utils:build: ℹ [ESM] dist/workflowId2.d.mts                  0.17 kB │ gzip: 0.15 kB
+@n8n/utils:build: ℹ [ESM] dist/path.d.mts                         0.17 kB │ gzip: 0.15 kB
+@n8n/utils:build: ℹ [ESM] 62 files, total: 50.73 kB
+@n8n/utils:build: ℹ [CJS] dist/index.d.cts                       0.98 kB │ gzip: 0.34 kB
+@n8n/utils:build: ℹ [CJS] dist/event-bus.d.cts                   0.14 kB │ gzip: 0.11 kB
+@n8n/utils:build: ℹ [CJS] dist/search/sublimeSearch.d.cts        0.12 kB │ gzip: 0.10 kB
+@n8n/utils:build: ℹ [CJS] dist/string/truncate.d.cts             0.11 kB │ gzip: 0.09 kB
+@n8n/utils:build: ℹ [CJS] dist/search/reRankSearchResults.d.cts  0.10 kB │ gzip: 0.08 kB
+@n8n/utils:build: ℹ [CJS] dist/event-queue.d.cts                 0.09 kB │ gzip: 0.08 kB
+@n8n/utils:build: ℹ [CJS] dist/sort/sortByProperty.d.cts         0.09 kB │ gzip: 0.08 kB
+@n8n/utils:build: ℹ [CJS] dist/files/sanitize.d.cts              0.09 kB │ gzip: 0.08 kB
+@n8n/utils:build: ℹ [CJS] dist/files/path.d.cts                  0.08 kB │ gzip: 0.08 kB
+@n8n/utils:build: ℹ [CJS] dist/workflowId.d.cts                  0.08 kB │ gzip: 0.08 kB
+@n8n/utils:build: ℹ [CJS] dist/number/smartDecimal.d.cts         0.08 kB │ gzip: 0.07 kB
+@n8n/utils:build: ℹ [CJS] dist/assert.d.cts                      0.06 kB │ gzip: 0.07 kB
+@n8n/utils:build: ℹ [CJS] dist/retry.d.cts                       0.06 kB │ gzip: 0.07 kB
+@n8n/utils:build: ℹ [CJS] dist/event-bus2.d.cts                  0.99 kB │ gzip: 0.35 kB
+@n8n/utils:build: ℹ [CJS] dist/sublimeSearch.d.cts               0.39 kB │ gzip: 0.25 kB
+@n8n/utils:build: ℹ [CJS] dist/reRankSearchResults.d.cts         0.37 kB │ gzip: 0.22 kB
+@n8n/utils:build: ℹ [CJS] dist/truncate.d.cts                    0.31 kB │ gzip: 0.19 kB
+@n8n/utils:build: ℹ [CJS] dist/retry2.d.cts                      0.28 kB │ gzip: 0.22 kB
+@n8n/utils:build: ℹ [CJS] dist/event-queue2.d.cts                0.24 kB │ gzip: 0.18 kB
+@n8n/utils:build: ℹ [CJS] dist/sortByProperty.d.cts              0.22 kB │ gzip: 0.17 kB
+@n8n/utils:build: ℹ [CJS] dist/sanitize.d.cts                    0.20 kB │ gzip: 0.16 kB
+@n8n/utils:build: ℹ [CJS] dist/smartDecimal.d.cts                0.20 kB │ gzip: 0.15 kB
+@n8n/utils:build: ℹ [CJS] dist/assert2.d.cts                     0.18 kB │ gzip: 0.15 kB
+@n8n/utils:build: ℹ [CJS] dist/workflowId2.d.cts                 0.17 kB │ gzip: 0.15 kB
+@n8n/utils:build: ℹ [CJS] dist/path.d.cts                        0.17 kB │ gzip: 0.15 kB
+@n8n/utils:build: ℹ [CJS] 25 files, total: 5.82 kB
+@n8n/utils:build: ✔ Build complete in 10188ms
+@n8n/design-system:build: cache hit, replaying logs 8d0b49d9d35aadbd
+@n8n/design-system:build: 
+@n8n/design-system:build: > @n8n/design-system@2.10.0 build /home/bashar/claudeProjects/n8n/packages/frontend/@n8n/design-system
+@n8n/design-system:build: > vite build
+@n8n/design-system:build: 
+@n8n/design-system:build: rolldown-vite v7.3.1 building client environment for production...
+@n8n/design-system:build: Browserslist: browsers data (caniuse-lite) is 9 months old. Please run:
+@n8n/design-system:build:   npx update-browserslist-db@latest
+@n8n/design-system:build:   Why you should do it regularly: https://github.com/browserslist/update-db#readme
+@n8n/design-system:build: [2K@n8n/design-system:build: transforming...✓ 2836 modules transformed.
+@n8n/design-system:build: rendering chunks...
+@n8n/design-system:build: [lightningcss minify] 'global' is not recognized as a valid pseudo-class. Did you mean '::global' (pseudo-element) or is this a typo?
+@n8n/design-system:build: 41 |   */
+@n8n/design-system:build: 42 |  /** @deprecated Use a semantic variant instead of success color */
+@n8n/design-system:build: 43 |  :global(.n8n-button--success) {
+@n8n/design-system:build:    |          ^
+@n8n/design-system:build: 44 |    --button--color--background: var(--color--success);
+@n8n/design-system:build: 45 |    --button--color--background-hover: var(--color--success--shade-1);
+@n8n/design-system:build: [lightningcss minify] 'global' is not recognized as a valid pseudo-class. Did you mean '::global' (pseudo-element) or is this a typo?
+@n8n/design-system:build: 50 |    --button--shadow--active: 0 0 0 1px var(--color--success--shade-1);
+@n8n/design-system:build: 51 |  }
+@n8n/design-system:build: 52 |  :global(.n8n-button--success):disabled, :global(.n8n-button--success)[aria-disabled=true] {
+@n8n/design-system:build:    |          ^
+@n8n/design-system:build: 53 |    --button--color--background: var(--color--success--tint-3);
+@n8n/design-system:build: 54 |    --button--shadow: 0 0 0 1px var(--color--success--tint-3);
+@n8n/design-system:build: [lightningcss minify] 'global' is not recognized as a valid pseudo-class. Did you mean '::global' (pseudo-element) or is this a typo?
+@n8n/design-system:build: 50 |    --button--shadow--active: 0 0 0 1px var(--color--success--shade-1);
+@n8n/design-system:build: 51 |  }
+@n8n/design-system:build: 52 |  :global(.n8n-button--success):disabled, :global(.n8n-button--success)[aria-disabled=true] {
+@n8n/design-system:build:    |                                                  ^
+@n8n/design-system:build: 53 |    --button--color--background: var(--color--success--tint-3);
+@n8n/design-system:build: 54 |    --button--shadow: 0 0 0 1px var(--color--success--tint-3);
+@n8n/design-system:build: [lightningcss minify] 'global' is not recognized as a valid pseudo-class. Did you mean '::global' (pseudo-element) or is this a typo?
+@n8n/design-system:build: 56 |  
+@n8n/design-system:build: 57 |  /** @deprecated Use a semantic variant instead of warning color */
+@n8n/design-system:build: 58 |  :global(.n8n-button--warning) {
+@n8n/design-system:build:    |          ^
+@n8n/design-system:build: 59 |    --button--color--background: var(--color--warning);
+@n8n/design-system:build: 60 |    --button--color--background-hover: var(--color--warning--shade-1);
+@n8n/design-system:build: [lightningcss minify] 'global' is not recognized as a valid pseudo-class. Did you mean '::global' (pseudo-element) or is this a typo?
+@n8n/design-system:build: 65 |    --button--shadow--active: 0 0 0 1px var(--color--warning--shade-1);
+@n8n/design-system:build: 66 |  }
+@n8n/design-system:build: 67 |  :global(.n8n-button--warning):disabled, :global(.n8n-button--warning)[aria-disabled=true] {
+@n8n/design-system:build:    |          ^
+@n8n/design-system:build: 68 |    --button--color--background: var(--color--warning--tint-1);
+@n8n/design-system:build: 69 |    --button--shadow: 0 0 0 1px var(--color--warning--tint-1);
+@n8n/design-system:build: [lightningcss minify] 'global' is not recognized as a valid pseudo-class. Did you mean '::global' (pseudo-element) or is this a typo?
+@n8n/design-system:build: 65 |    --button--shadow--active: 0 0 0 1px var(--color--warning--shade-1);
+@n8n/design-system:build: 66 |  }
+@n8n/design-system:build: 67 |  :global(.n8n-button--warning):disabled, :global(.n8n-button--warning)[aria-disabled=true] {
+@n8n/design-system:build:    |                                                  ^
+@n8n/design-system:build: 68 |    --button--color--background: var(--color--warning--tint-1);
+@n8n/design-system:build: 69 |    --button--shadow: 0 0 0 1px var(--color--warning--tint-1);
+@n8n/design-system:build: computing gzip size...
+@n8n/design-system:build: dist/design-system.css          147.73 kB │ gzip:  23.87 kB
+@n8n/design-system:build: dist/en-BJExinQh.js               0.08 kB │ gzip:   0.08 kB
+@n8n/design-system:build: dist/en-stb6CFyD.js               6.43 kB │ gzip:   2.14 kB
+@n8n/design-system:build: dist/compact-CWM3h4JV.js        660.25 kB │ gzip:  87.39 kB
+@n8n/design-system:build: dist/n8n-design-system.es.js  2,054.41 kB │ gzip: 498.61 kB
+@n8n/design-system:build: [2K@n8n/design-system:build: transforming...✓ 2836 modules transformed.
+@n8n/design-system:build: rendering chunks...
+@n8n/design-system:build: [lightningcss minify] 'global' is not recognized as a valid pseudo-class. Did you mean '::global' (pseudo-element) or is this a typo?
+@n8n/design-system:build: 41 |   */
+@n8n/design-system:build: 42 |  /** @deprecated Use a semantic variant instead of success color */
+@n8n/design-system:build: 43 |  :global(.n8n-button--success) {
+@n8n/design-system:build:    |          ^
+@n8n/design-system:build: 44 |    --button--color--background: var(--color--success);
+@n8n/design-system:build: 45 |    --button--color--background-hover: var(--color--success--shade-1);
+@n8n/design-system:build: [lightningcss minify] 'global' is not recognized as a valid pseudo-class. Did you mean '::global' (pseudo-element) or is this a typo?
+@n8n/design-system:build: 50 |    --button--shadow--active: 0 0 0 1px var(--color--success--shade-1);
+@n8n/design-system:build: 51 |  }
+@n8n/design-system:build: 52 |  :global(.n8n-button--success):disabled, :global(.n8n-button--success)[aria-disabled=true] {
+@n8n/design-system:build:    |          ^
+@n8n/design-system:build: 53 |    --button--color--background: var(--color--success--tint-3);
+@n8n/design-system:build: 54 |    --button--shadow: 0 0 0 1px var(--color--success--tint-3);
+@n8n/design-system:build: [lightningcss minify] 'global' is not recognized as a valid pseudo-class. Did you mean '::global' (pseudo-element) or is this a typo?
+@n8n/design-system:build: 50 |    --button--shadow--active: 0 0 0 1px var(--color--success--shade-1);
+@n8n/design-system:build: 51 |  }
+@n8n/design-system:build: 52 |  :global(.n8n-button--success):disabled, :global(.n8n-button--success)[aria-disabled=true] {
+@n8n/design-system:build:    |                                                  ^
+@n8n/design-system:build: 53 |    --button--color--background: var(--color--success--tint-3);
+@n8n/design-system:build: 54 |    --button--shadow: 0 0 0 1px var(--color--success--tint-3);
+@n8n/design-system:build: [lightningcss minify] 'global' is not recognized as a valid pseudo-class. Did you mean '::global' (pseudo-element) or is this a typo?
+@n8n/design-system:build: 56 |  
+@n8n/design-system:build: 57 |  /** @deprecated Use a semantic variant instead of warning color */
+@n8n/design-system:build: 58 |  :global(.n8n-button--warning) {
+@n8n/design-system:build:    |          ^
+@n8n/design-system:build: 59 |    --button--color--background: var(--color--warning);
+@n8n/design-system:build: 60 |    --button--color--background-hover: var(--color--warning--shade-1);
+@n8n/design-system:build: [lightningcss minify] 'global' is not recognized as a valid pseudo-class. Did you mean '::global' (pseudo-element) or is this a typo?
+@n8n/design-system:build: 65 |    --button--shadow--active: 0 0 0 1px var(--color--warning--shade-1);
+@n8n/design-system:build: 66 |  }
+@n8n/design-system:build: 67 |  :global(.n8n-button--warning):disabled, :global(.n8n-button--warning)[aria-disabled=true] {
+@n8n/design-system:build:    |          ^
+@n8n/design-system:build: 68 |    --button--color--background: var(--color--warning--tint-1);
+@n8n/design-system:build: 69 |    --button--shadow: 0 0 0 1px var(--color--warning--tint-1);
+@n8n/design-system:build: [lightningcss minify] 'global' is not recognized as a valid pseudo-class. Did you mean '::global' (pseudo-element) or is this a typo?
+@n8n/design-system:build: 65 |    --button--shadow--active: 0 0 0 1px var(--color--warning--shade-1);
+@n8n/design-system:build: 66 |  }
+@n8n/design-system:build: 67 |  :global(.n8n-button--warning):disabled, :global(.n8n-button--warning)[aria-disabled=true] {
+@n8n/design-system:build:    |                                                  ^
+@n8n/design-system:build: 68 |    --button--color--background: var(--color--warning--tint-1);
+@n8n/design-system:build: 69 |    --button--shadow: 0 0 0 1px var(--color--warning--tint-1);
+@n8n/design-system:build: computing gzip size...
+@n8n/design-system:build: dist/design-system.css           147.73 kB │ gzip:  23.87 kB
+@n8n/design-system:build: dist/n8n-design-system.umd.js  2,113.88 kB │ gzip: 522.25 kB
+@n8n/design-system:build: ✓ built in 34.25s
+@n8n/chat:build: cache miss, executing f50dc919ccbf0a66
+n8n-workflow:build: cache hit, replaying logs a28e328f7a0ef07d
+n8n-workflow:build: 
+n8n-workflow:build: > n8n-workflow@2.10.0 build /home/bashar/claudeProjects/n8n/packages/workflow
+n8n-workflow:build: > tsc --build tsconfig.build.esm.json tsconfig.build.cjs.json
+n8n-workflow:build: 
+@n8n/stores:build: cache hit, replaying logs 1bf649e60380553a
+@n8n/stores:build: 
+@n8n/stores:build: > @n8n/stores@2.10.0 build /home/bashar/claudeProjects/n8n/packages/frontend/@n8n/stores
+@n8n/stores:build: > tsdown
+@n8n/stores:build: 
+@n8n/stores:build: ℹ tsdown v0.16.5 powered by rolldown v1.0.0-beta.50
+@n8n/stores:build: ℹ Using tsdown config: /home/bashar/claudeProjects/n8n/packages/frontend/@n8n/stores/tsdown.config.ts
+@n8n/stores:build: ℹ entry: src/constants.ts, src/index.ts, src/metaTagConfig.ts, src/useAgentRequestStore.ts, src/useRootStore.ts
+@n8n/stores:build: ℹ tsconfig: tsconfig.json
+@n8n/stores:build: ℹ Build start
+@n8n/stores:build: ℹ [CJS] dist/useRootStore.cjs               5.94 kB │ gzip: 1.37 kB
+@n8n/stores:build: ℹ [CJS] dist/useAgentRequestStore.cjs       1.89 kB │ gzip: 0.57 kB
+@n8n/stores:build: ℹ [CJS] dist/metaTagConfig.cjs              0.23 kB │ gzip: 0.11 kB
+@n8n/stores:build: ℹ [CJS] dist/constants.cjs                  0.10 kB │ gzip: 0.08 kB
+@n8n/stores:build: ℹ [CJS] dist/index.cjs                      0.10 kB │ gzip: 0.08 kB
+@n8n/stores:build: ℹ [CJS] dist/useRootStore.cjs.map          10.45 kB │ gzip: 2.38 kB
+@n8n/stores:build: ℹ [CJS] dist/useAgentRequestStore.cjs.map   3.65 kB │ gzip: 1.14 kB
+@n8n/stores:build: ℹ [CJS] dist/constants2.cjs.map             2.48 kB │ gzip: 1.10 kB
+@n8n/stores:build: ℹ [CJS] dist/metaTagConfig2.cjs.map         1.85 kB │ gzip: 0.76 kB
+@n8n/stores:build: ℹ [CJS] dist/constants2.cjs                 1.84 kB │ gzip: 0.93 kB
+@n8n/stores:build: ℹ [CJS] dist/metaTagConfig2.cjs             1.34 kB │ gzip: 0.51 kB
+@n8n/stores:build: ℹ [CJS] 11 files, total: 29.87 kB
+@n8n/stores:build: [33m[EMPTY_IMPORT_META] Warning:[0m `import.meta` may not be a valid syntax with the `cjs` output format.
+@n8n/stores:build:    [38;5;246m╭[0m[38;5;246m─[0m[38;5;246m[[0m src/useRootStore.ts:8:34 [38;5;246m][0m
+@n8n/stores:build:    [38;5;246m│[0m
+@n8n/stores:build:  [38;5;246m8 │[0m [38;5;249mc[0m[38;5;249mo[0m[38;5;249mn[0m[38;5;249ms[0m[38;5;249mt[0m[38;5;249m [0m[38;5;249m{[0m[38;5;249m [0m[38;5;249mV[0m[38;5;249mU[0m[38;5;249mE[0m[38;5;249m_[0m[38;5;249mA[0m[38;5;249mP[0m[38;5;249mP[0m[38;5;249m_[0m[38;5;249mU[0m[38;5;249mR[0m[38;5;249mL[0m[38;5;249m_[0m[38;5;249mB[0m[38;5;249mA[0m[38;5;249mS[0m[38;5;249mE[0m[38;5;249m_[0m[38;5;249mA[0m[38;5;249mP[0m[38;5;249mI[0m[38;5;249m [0m[38;5;249m}[0m[38;5;249m [0m[38;5;249m=[0m[38;5;249m [0mimport.meta[38;5;249m.[0m[38;5;249me[0m[38;5;249mn[0m[38;5;249mv[0m[38;5;249m;[0m
+@n8n/stores:build:  [38;5;240m  │[0m                                  ─────┬─────  
+@n8n/stores:build:  [38;5;240m  │[0m                                       ╰─────── This `import.meta` will be replaced with an empty object (`{}`) automatically. If this is desired, you can suppress this warning by adding `transform.define: { 'import.meta': {} }`. If `import.meta` needs to be kept as-is, you need to set the output format to `esm`.
+@n8n/stores:build: [38;5;246m───╯[0m
+@n8n/stores:build: 
+@n8n/stores:build: ℹ [ESM] dist/useRootStore.mjs               5.68 kB │ gzip: 1.34 kB
+@n8n/stores:build: ℹ [ESM] dist/useAgentRequestStore.mjs       1.85 kB │ gzip: 0.55 kB
+@n8n/stores:build: ℹ [ESM] dist/metaTagConfig.mjs              0.16 kB │ gzip: 0.11 kB
+@n8n/stores:build: ℹ [ESM] dist/constants.mjs                  0.07 kB │ gzip: 0.08 kB
+@n8n/stores:build: ℹ [ESM] dist/index.mjs                      0.07 kB │ gzip: 0.08 kB
+@n8n/stores:build: ℹ [ESM] dist/useRootStore.mjs.map          10.52 kB │ gzip: 2.35 kB
+@n8n/stores:build: ℹ [ESM] dist/useAgentRequestStore.mjs.map   3.66 kB │ gzip: 1.15 kB
+@n8n/stores:build: ℹ [ESM] dist/constants2.mjs.map             2.48 kB │ gzip: 1.10 kB
+@n8n/stores:build: ℹ [ESM] dist/metaTagConfig2.mjs.map         1.85 kB │ gzip: 0.76 kB
+@n8n/stores:build: ℹ [ESM] dist/constants2.mjs                 1.76 kB │ gzip: 0.86 kB
+@n8n/stores:build: ℹ [ESM] dist/metaTagConfig2.mjs             1.12 kB │ gzip: 0.46 kB
+@n8n/stores:build: ℹ [ESM] dist/useRootStore.d.mts             7.48 kB │ gzip: 0.93 kB
+@n8n/stores:build: ℹ [ESM] dist/useAgentRequestStore.d.mts     2.45 kB │ gzip: 0.49 kB
+@n8n/stores:build: ℹ [ESM] dist/metaTagConfig.d.mts            0.31 kB │ gzip: 0.17 kB
+@n8n/stores:build: ℹ [ESM] dist/constants.d.mts                0.07 kB │ gzip: 0.07 kB
+@n8n/stores:build: ℹ [ESM] dist/index.d.mts                    0.07 kB │ gzip: 0.07 kB
+@n8n/stores:build: ℹ [ESM] dist/constants2.d.mts               2.29 kB │ gzip: 0.89 kB
+@n8n/stores:build: ℹ [ESM] 17 files, total: 41.88 kB
+@n8n/stores:build: ℹ [CJS] dist/useRootStore.d.cts          7.48 kB │ gzip: 0.93 kB
+@n8n/stores:build: ℹ [CJS] dist/useAgentRequestStore.d.cts  2.45 kB │ gzip: 0.49 kB
+@n8n/stores:build: ℹ [CJS] dist/metaTagConfig.d.cts         0.31 kB │ gzip: 0.17 kB
+@n8n/stores:build: ℹ [CJS] dist/constants.d.cts             0.07 kB │ gzip: 0.07 kB
+@n8n/stores:build: ℹ [CJS] dist/index.d.cts                 0.07 kB │ gzip: 0.07 kB
+@n8n/stores:build: ℹ [CJS] dist/constants2.d.cts            2.29 kB │ gzip: 0.89 kB
+@n8n/stores:build: ℹ [CJS] 6 files, total: 12.66 kB
+@n8n/stores:build: ✔ Build complete in 21348ms
+@n8n/decorators:build: cache hit, replaying logs a6aaca03f60fe1c4
+@n8n/decorators:build: 
+@n8n/decorators:build: > @n8n/decorators@1.10.0 build /home/bashar/claudeProjects/n8n/packages/@n8n/decorators
+@n8n/decorators:build: > tsc -p tsconfig.build.json
+@n8n/decorators:build: 
+@n8n/i18n:build: cache hit, replaying logs 6d38533f0eea3acd
+@n8n/i18n:build: 
+@n8n/i18n:build: > @n8n/i18n@2.10.0 build /home/bashar/claudeProjects/n8n/packages/frontend/@n8n/i18n
+@n8n/i18n:build: > tsdown
+@n8n/i18n:build: 
+@n8n/i18n:build: ℹ tsdown v0.16.5 powered by rolldown v1.0.0-beta.50
+@n8n/i18n:build: ℹ Using tsdown config: /home/bashar/claudeProjects/n8n/packages/frontend/@n8n/i18n/tsdown.config.ts
+@n8n/i18n:build: ℹ entry: src/index.ts, src/types.ts, src/utils.ts
+@n8n/i18n:build: ℹ tsconfig: tsconfig.json
+@n8n/i18n:build: ℹ Build start
+@n8n/i18n:build: ℹ [CJS] dist/index.cjs       390.11 kB │ gzip: 87.91 kB
+@n8n/i18n:build: ℹ [CJS] dist/utils.cjs         0.29 kB │ gzip:  0.15 kB
+@n8n/i18n:build: ℹ [CJS] dist/types.cjs         0.00 kB │ gzip:  0.02 kB
+@n8n/i18n:build: ℹ [CJS] dist/index.cjs.map   492.36 kB │ gzip: 99.34 kB
+@n8n/i18n:build: ℹ [CJS] dist/utils2.cjs.map    3.42 kB │ gzip:  1.35 kB
+@n8n/i18n:build: ℹ [CJS] dist/utils2.cjs        2.69 kB │ gzip:  1.02 kB
+@n8n/i18n:build: ℹ [CJS] 6 files, total: 888.88 kB
+@n8n/i18n:build: ℹ [ESM] dist/index.mjs       389.72 kB │ gzip: 87.89 kB
+@n8n/i18n:build: ℹ [ESM] dist/utils.mjs         0.22 kB │ gzip:  0.15 kB
+@n8n/i18n:build: ℹ [ESM] dist/types.mjs         0.01 kB │ gzip:  0.03 kB
+@n8n/i18n:build: ℹ [ESM] dist/index.mjs.map   492.27 kB │ gzip: 99.27 kB
+@n8n/i18n:build: ℹ [ESM] dist/utils2.mjs.map    3.42 kB │ gzip:  1.35 kB
+@n8n/i18n:build: ℹ [ESM] dist/utils2.mjs        2.27 kB │ gzip:  0.96 kB
+@n8n/i18n:build: ℹ [ESM] dist/index.d.mts     253.40 kB │ gzip: 33.80 kB
+@n8n/i18n:build: ℹ [ESM] dist/utils.d.mts       0.46 kB │ gzip:  0.25 kB
+@n8n/i18n:build: ℹ [ESM] dist/types.d.mts       0.20 kB │ gzip:  0.14 kB
+@n8n/i18n:build: ℹ [ESM] dist/types2.d.mts    240.49 kB │ gzip: 32.72 kB
+@n8n/i18n:build: ℹ [ESM] 10 files, total: 1382.45 kB
+@n8n/i18n:build: ℹ [CJS] dist/index.d.cts   253.40 kB │ gzip: 33.80 kB
+@n8n/i18n:build: ℹ [CJS] dist/utils.d.cts     0.46 kB │ gzip:  0.25 kB
+@n8n/i18n:build: ℹ [CJS] dist/types.d.cts     0.20 kB │ gzip:  0.14 kB
+@n8n/i18n:build: ℹ [CJS] dist/types2.d.cts  240.49 kB │ gzip: 32.72 kB
+@n8n/i18n:build: ℹ [CJS] 4 files, total: 494.55 kB
+@n8n/i18n:build: ✔ Build complete in 24914ms
+@n8n/backend-common:build: cache hit, replaying logs df67500bbda138fc
+@n8n/backend-common:build: 
+@n8n/backend-common:build: > @n8n/backend-common@1.10.0 build /home/bashar/claudeProjects/n8n/packages/@n8n/backend-common
+@n8n/backend-common:build: > tsc -p tsconfig.build.json
+@n8n/backend-common:build: 
+@n8n/workflow-sdk:build: cache hit, replaying logs 5c4aad5ae90946ea
+@n8n/workflow-sdk:build: 
+@n8n/workflow-sdk:build: > @n8n/workflow-sdk@0.3.0 build /home/bashar/claudeProjects/n8n/packages/@n8n/workflow-sdk
+@n8n/workflow-sdk:build: > tsc -p tsconfig.build.json
+@n8n/workflow-sdk:build: 
+@n8n/api-types:build: cache hit, replaying logs 164184ad0fe261cd
+@n8n/api-types:build: 
+@n8n/api-types:build: > @n8n/api-types@1.10.0 build /home/bashar/claudeProjects/n8n/packages/@n8n/api-types
+@n8n/api-types:build: > tsc -p tsconfig.build.json
+@n8n/api-types:build: 
+@n8n/ai-utilities:build: cache hit, replaying logs 52346f82071f3323
+@n8n/ai-utilities:build: 
+@n8n/ai-utilities:build: > @n8n/ai-utilities@0.4.0 build /home/bashar/claudeProjects/n8n/packages/@n8n/ai-utilities
+@n8n/ai-utilities:build: > tsc --build tsconfig.build.esm.json tsconfig.build.cjs.json && tsc-alias -p tsconfig.build.esm.json && tsc-alias -p tsconfig.build.cjs.json && pnpm copy-tokenizer-json dist/cjs && pnpm copy-tokenizer-json dist/esm
+@n8n/ai-utilities:build: 
+@n8n/ai-utilities:build: 
+@n8n/ai-utilities:build: > @n8n/ai-utilities@0.4.0 copy-tokenizer-json /home/bashar/claudeProjects/n8n/packages/@n8n/ai-utilities
+@n8n/ai-utilities:build: > node scripts/copy-tokenizer-json.js . dist/cjs
+@n8n/ai-utilities:build: 
+@n8n/ai-utilities:build: Copied: src/utils/tokenizer/cl100k_base.json -> /home/bashar/claudeProjects/n8n/packages/@n8n/ai-utilities/dist/cjs/utils/tokenizer/cl100k_basejson
+@n8n/ai-utilities:build: Copied: src/utils/tokenizer/o200k_base.json -> /home/bashar/claudeProjects/n8n/packages/@n8n/ai-utilities/dist/cjs/utils/tokenizer/o200k_basejson
+@n8n/ai-utilities:build: 
+@n8n/ai-utilities:build: > @n8n/ai-utilities@0.4.0 copy-tokenizer-json /home/bashar/claudeProjects/n8n/packages/@n8n/ai-utilities
+@n8n/ai-utilities:build: > node scripts/copy-tokenizer-json.js . dist/esm
+@n8n/ai-utilities:build: 
+@n8n/ai-utilities:build: Copied: src/utils/tokenizer/cl100k_base.json -> /home/bashar/claudeProjects/n8n/packages/@n8n/ai-utilities/dist/esm/utils/tokenizer/cl100k_basejson
+@n8n/ai-utilities:build: Copied: src/utils/tokenizer/o200k_base.json -> /home/bashar/claudeProjects/n8n/packages/@n8n/ai-utilities/dist/esm/utils/tokenizer/o200k_basejson
+@n8n/chat-hub:build: cache hit, replaying logs f1ba07b459f757e7
+@n8n/chat-hub:build: 
+@n8n/chat-hub:build: > @n8n/chat-hub@1.3.0 build /home/bashar/claudeProjects/n8n/packages/@n8n/chat-hub
+@n8n/chat-hub:build: > tsc -p tsconfig.build.json
+@n8n/chat-hub:build: 
+n8n-core:build: cache hit, replaying logs 7370da8053fe3fe7
+n8n-core:build: 
+n8n-core:build: > n8n-core@2.10.0 build /home/bashar/claudeProjects/n8n/packages/core
+n8n-core:build: > tsc -p tsconfig.build.json && tsc-alias -p tsconfig.build.json
+n8n-core:build: 
+@n8n/rest-api-client:build: cache hit, replaying logs 124c4befb191f5a2
+@n8n/rest-api-client:build: 
+@n8n/rest-api-client:build: > @n8n/rest-api-client@2.10.0 build /home/bashar/claudeProjects/n8n/packages/frontend/@n8n/rest-api-client
+@n8n/rest-api-client:build: > tsdown
+@n8n/rest-api-client:build: 
+@n8n/rest-api-client:build: ℹ tsdown v0.16.5 powered by rolldown v1.0.0-beta.50
+@n8n/rest-api-client:build: ℹ Using tsdown config: /home/bashar/claudeProjects/n8n/packages/frontend/@n8n/rest-api-client/tsdown.config.ts
+@n8n/rest-api-client:build: ℹ entry: src/index.ts, src/types.ts, src/utils.ts, src/api/ai-usage.ts, src/api/api-keys.ts, src/api/breaking-changes.ts, src/api/cloudPlans.ts, src/api/communityNodes.ts, src/api/consent.ts, src/api/credentialResolvers.ts, src/api/ctas.ts, src/api/dynamic-banners.ts, src/api/eventbus.ee.ts, src/api/events.ts, src/api/execution.ts, src/api/externalSecrets.ee.ts, src/api/index.ts, src/api/ldap.ts, src/api/mfa.ts, src/api/module-settings.ts, src/api/nodeTypes.ts, src/api/npsSurvey.ts, src/api/orchestration.ts, src/api/provisioning.ts, src/api/roles.ts, src/api/secretsProvider.ee.ts, src/api/security-settings.ts, src/api/settings.ts, src/api/sso.ts, src/api/tags.ts, src/api/templates.ts, src/api/third-party-licenses.ts, src/api/ui.ts, src/api/usage.ts, src/api/users.ts, src/api/versions.ts, src/api/webhooks.ts, src/api/workflowHistory.ts, src/api/workflows.ts
+@n8n/rest-api-client:build: ℹ tsconfig: tsconfig.json
+@n8n/rest-api-client:build: ℹ Build start
+@n8n/rest-api-client:build: ℹ [CJS] dist/index.cjs                     12.27 kB │ gzip: 2.12 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/api/index.cjs                 11.72 kB │ gzip: 1.98 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/api/secretsProvider.ee.cjs     1.58 kB │ gzip: 0.24 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/api/users.cjs                  1.26 kB │ gzip: 0.33 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/api/nodeTypes.cjs              1.01 kB │ gzip: 0.27 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/api/externalSecrets.ee.cjs     0.86 kB │ gzip: 0.20 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/api/breaking-changes.cjs       0.78 kB │ gzip: 0.33 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/api/credentialResolvers.cjs    0.63 kB │ gzip: 0.16 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/utils.cjs                      0.61 kB │ gzip: 0.22 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/api/eventbus.ee.cjs            0.56 kB │ gzip: 0.19 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/api/sso.cjs                    0.53 kB │ gzip: 0.18 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/api/templates.cjs              0.51 kB │ gzip: 0.18 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/api/consent.cjs                0.50 kB │ gzip: 0.26 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/api/roles.cjs                  0.48 kB │ gzip: 0.17 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/api/communityNodes.cjs         0.48 kB │ gzip: 0.17 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/api/cloudPlans.cjs             0.48 kB │ gzip: 0.18 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/api/workflowHistory.cjs        0.42 kB │ gzip: 0.14 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/api/usage.cjs                  0.37 kB │ gzip: 0.17 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/api/ldap.cjs                   0.36 kB │ gzip: 0.16 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/api/mfa.cjs                    0.35 kB │ gzip: 0.17 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/api/api-keys.cjs               0.35 kB │ gzip: 0.15 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/api/dynamic-banners.cjs        0.30 kB │ gzip: 0.20 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/api/security-settings.cjs      0.26 kB │ gzip: 0.12 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/api/provisioning.cjs           0.24 kB │ gzip: 0.12 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/api/versions.cjs               0.20 kB │ gzip: 0.12 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/api/third-party-licenses.cjs   0.19 kB │ gzip: 0.12 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/api/module-settings.cjs        0.16 kB │ gzip: 0.11 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/api/orchestration.cjs          0.16 kB │ gzip: 0.11 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/api/npsSurvey.cjs              0.15 kB │ gzip: 0.10 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/api/ai-usage.cjs               0.15 kB │ gzip: 0.11 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/api/ui.cjs                     0.14 kB │ gzip: 0.11 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/api/ctas.cjs                   0.14 kB │ gzip: 0.10 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/api/events.cjs                 0.13 kB │ gzip: 0.10 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/api/settings.cjs               0.13 kB │ gzip: 0.09 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/api/webhooks.cjs               0.13 kB │ gzip: 0.10 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/api/execution.cjs              0.00 kB │ gzip: 0.02 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/api/tags.cjs                   0.00 kB │ gzip: 0.02 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/api/workflows.cjs              0.00 kB │ gzip: 0.02 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/types.cjs                      0.00 kB │ gzip: 0.02 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/utils2.cjs.map                13.37 kB │ gzip: 4.31 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/users.cjs.map                  9.01 kB │ gzip: 1.89 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/utils2.cjs                     8.99 kB │ gzip: 2.88 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/templates.cjs.map              6.40 kB │ gzip: 1.74 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/secretsProvider.ee.cjs.map     6.12 kB │ gzip: 1.02 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/nodeTypes.cjs.map              5.75 kB │ gzip: 1.64 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/users.cjs                      5.68 kB │ gzip: 0.88 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/secretsProvider.ee.cjs         5.26 kB │ gzip: 0.61 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/nodeTypes.cjs                  4.75 kB │ gzip: 1.08 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/cloudPlans.cjs.map             3.72 kB │ gzip: 1.38 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/externalSecrets.ee.cjs.map     3.40 kB │ gzip: 0.86 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/workflowHistory.cjs.map        3.20 kB │ gzip: 0.96 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/externalSecrets.ee.cjs         3.05 kB │ gzip: 0.56 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/sso.cjs.map                    2.90 kB │ gzip: 0.77 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/ldap.cjs.map                   2.63 kB │ gzip: 0.90 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/sso.cjs                        2.53 kB │ gzip: 0.49 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/roles.cjs.map                  2.52 kB │ gzip: 0.75 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/templates.cjs                  2.50 kB │ gzip: 0.59 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/eventbus.ee.cjs.map            2.33 kB │ gzip: 0.79 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/credentialResolvers.cjs.map    2.30 kB │ gzip: 0.62 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/communityNodes.cjs.map         2.11 kB │ gzip: 0.82 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/roles.cjs                      2.10 kB │ gzip: 0.49 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/versions.cjs.map               2.05 kB │ gzip: 0.78 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/credentialResolvers.cjs        2.00 kB │ gzip: 0.41 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/eventbus.ee.cjs                1.94 kB │ gzip: 0.50 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/mfa.cjs.map                    1.88 kB │ gzip: 0.61 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/usage.cjs.map                  1.80 kB │ gzip: 0.64 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/communityNodes.cjs             1.76 kB │ gzip: 0.57 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/api-keys.cjs.map               1.75 kB │ gzip: 0.58 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/cloudPlans.cjs                 1.69 kB │ gzip: 0.43 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/mfa.cjs                        1.63 kB │ gzip: 0.41 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/workflowHistory.cjs            1.57 kB │ gzip: 0.42 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/api/breaking-changes.cjs.map   1.56 kB │ gzip: 0.62 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/usage.cjs                      1.52 kB │ gzip: 0.42 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/ldap.cjs                       1.47 kB │ gzip: 0.40 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/api-keys.cjs                   1.41 kB │ gzip: 0.39 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/provisioning.cjs.map           1.08 kB │ gzip: 0.46 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/api/consent.cjs.map            0.96 kB │ gzip: 0.45 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/api/dynamic-banners.cjs.map    0.94 kB │ gzip: 0.51 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/security-settings.cjs.map      0.90 kB │ gzip: 0.40 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/versions.cjs                   0.88 kB │ gzip: 0.37 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/provisioning.cjs               0.73 kB │ gzip: 0.32 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/webhooks.cjs.map               0.73 kB │ gzip: 0.42 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/security-settings.cjs          0.71 kB │ gzip: 0.31 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/ui.cjs.map                     0.66 kB │ gzip: 0.40 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/ai-usage.cjs.map               0.60 kB │ gzip: 0.35 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/module-settings.cjs.map        0.56 kB │ gzip: 0.32 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/orchestration.cjs.map          0.56 kB │ gzip: 0.35 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/third-party-licenses.cjs.map   0.55 kB │ gzip: 0.35 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/npsSurvey.cjs.map              0.55 kB │ gzip: 0.33 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/settings.cjs.map               0.52 kB │ gzip: 0.31 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/third-party-licenses.cjs       0.47 kB │ gzip: 0.29 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/orchestration.cjs              0.47 kB │ gzip: 0.30 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/events.cjs.map                 0.46 kB │ gzip: 0.30 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/ctas.cjs.map                   0.45 kB │ gzip: 0.31 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/ui.cjs                         0.44 kB │ gzip: 0.29 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/npsSurvey.cjs                  0.42 kB │ gzip: 0.28 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/ai-usage.cjs                   0.42 kB │ gzip: 0.28 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/module-settings.cjs            0.41 kB │ gzip: 0.27 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/webhooks.cjs                   0.39 kB │ gzip: 0.27 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/events.cjs                     0.39 kB │ gzip: 0.27 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/ctas.cjs                       0.38 kB │ gzip: 0.26 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/settings.cjs                   0.37 kB │ gzip: 0.26 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/api.cjs                        0.00 kB │ gzip: 0.02 kB
+@n8n/rest-api-client:build: ℹ [CJS] 103 files, total: 179.22 kB
+@n8n/rest-api-client:build: [33m[EMPTY_IMPORT_META] Warning:[0m `import.meta` may not be a valid syntax with the `cjs` output format.
+@n8n/rest-api-client:build:      [38;5;246m╭[0m[38;5;246m─[0m[38;5;246m[[0m src/utils.ts:120:3 [38;5;246m][0m
+@n8n/rest-api-client:build:      [38;5;246m│[0m
+@n8n/rest-api-client:build:  [38;5;246m120 │[0m [38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0mimport.meta[38;5;249m.[0m[38;5;249me[0m[38;5;249mn[0m[38;5;249mv[0m[38;5;249m.[0m[38;5;249mN[0m[38;5;249mO[0m[38;5;249mD[0m[38;5;249mE[0m[38;5;249m_[0m[38;5;249mE[0m[38;5;249mN[0m[38;5;249mV[0m[38;5;249m [0m[38;5;249m![0m[38;5;249m=[0m[38;5;249m=[0m[38;5;249m [0m[38;5;249m'[0m[38;5;249mp[0m[38;5;249mr[0m[38;5;249mo[0m[38;5;249md[0m[38;5;249mu[0m[38;5;249mc[0m[38;5;249mt[0m[38;5;249mi[0m[38;5;249mo[0m[38;5;249mn[0m[38;5;249m'[0m[38;5;249m [0m[38;5;249m&[0m[38;5;249m&[0m
+@n8n/rest-api-client:build:  [38;5;240m    │[0m        ─────┬─────  
+@n8n/rest-api-client:build:  [38;5;240m    │[0m             ╰─────── This `import.meta` will be replaced with an empty object (`{}`) automatically. If this is desired, you can suppress this warning by adding `transform.define: { 'import.meta': {} }`. If `import.meta` needs to be kept as-is, you need to set the output format to `esm`.
+@n8n/rest-api-client:build: [38;5;246m─────╯[0m
+@n8n/rest-api-client:build: 
+@n8n/rest-api-client:build: ℹ [CJS] dist/index.d.cts                     10.74 kB │ gzip: 2.55 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/api/index.d.cts                 10.33 kB │ gzip: 2.40 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/api/users.d.cts                  1.39 kB │ gzip: 0.45 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/api/secretsProvider.ee.d.cts     1.13 kB │ gzip: 0.24 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/api/templates.d.cts              1.12 kB │ gzip: 0.33 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/api/breaking-changes.d.cts       0.77 kB │ gzip: 0.32 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/api/dynamic-banners.d.cts        0.75 kB │ gzip: 0.40 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/api/nodeTypes.d.cts              0.73 kB │ gzip: 0.26 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/api/workflowHistory.d.cts        0.70 kB │ gzip: 0.23 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/api/consent.d.cts                0.57 kB │ gzip: 0.28 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/api/externalSecrets.ee.d.cts     0.56 kB │ gzip: 0.20 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/api/eventbus.ee.d.cts            0.48 kB │ gzip: 0.21 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/api/sso.d.cts                    0.45 kB │ gzip: 0.20 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/utils.d.cts                      0.43 kB │ gzip: 0.23 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/api/cloudPlans.d.cts             0.43 kB │ gzip: 0.22 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/api/credentialResolvers.d.cts    0.41 kB │ gzip: 0.15 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/api/ldap.d.cts                   0.37 kB │ gzip: 0.18 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/api/roles.d.cts                  0.35 kB │ gzip: 0.17 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/api/communityNodes.d.cts         0.33 kB │ gzip: 0.17 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/api/mfa.d.cts                    0.29 kB │ gzip: 0.17 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/api/usage.d.cts                  0.28 kB │ gzip: 0.16 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/api/versions.d.cts               0.26 kB │ gzip: 0.14 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/api/api-keys.d.cts               0.23 kB │ gzip: 0.14 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/api/workflows.d.cts              0.23 kB │ gzip: 0.13 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/api/provisioning.d.cts           0.22 kB │ gzip: 0.12 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/api/security-settings.d.cts      0.18 kB │ gzip: 0.12 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/api/third-party-licenses.d.cts   0.13 kB │ gzip: 0.10 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/api/orchestration.d.cts          0.12 kB │ gzip: 0.10 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/api/ai-usage.d.cts               0.12 kB │ gzip: 0.10 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/api/ui.d.cts                     0.12 kB │ gzip: 0.10 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/api/module-settings.d.cts        0.12 kB │ gzip: 0.10 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/api/npsSurvey.d.cts              0.12 kB │ gzip: 0.10 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/api/ctas.d.cts                   0.11 kB │ gzip: 0.10 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/api/events.d.cts                 0.10 kB │ gzip: 0.09 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/api/settings.d.cts               0.10 kB │ gzip: 0.09 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/api/webhooks.d.cts               0.10 kB │ gzip: 0.09 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/types.d.cts                      0.08 kB │ gzip: 0.08 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/api/tags.d.cts                   0.06 kB │ gzip: 0.07 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/api/execution.d.cts              0.01 kB │ gzip: 0.03 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/users.d.cts                      5.71 kB │ gzip: 1.29 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/templates.d.cts                  4.35 kB │ gzip: 1.11 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/secretsProvider.ee.d.cts         3.18 kB │ gzip: 0.56 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/cloudPlans.d.cts                 2.39 kB │ gzip: 0.91 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/nodeTypes.d.cts                  2.31 kB │ gzip: 0.61 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/utils2.d.cts                     2.25 kB │ gzip: 0.81 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/workflowHistory.d.cts            2.21 kB │ gzip: 0.68 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/ldap.d.cts                       1.75 kB │ gzip: 0.62 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/externalSecrets.ee.d.cts         1.59 kB │ gzip: 0.42 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/sso.d.cts                        1.41 kB │ gzip: 0.45 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/versions.d.cts                   1.31 kB │ gzip: 0.51 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/eventbus.ee.d.cts                1.29 kB │ gzip: 0.42 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/credentialResolvers.d.cts        1.26 kB │ gzip: 0.37 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/workflows.d.cts                  1.25 kB │ gzip: 0.47 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/roles.d.cts                      1.22 kB │ gzip: 0.40 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/mfa.d.cts                        0.94 kB │ gzip: 0.37 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/api-keys.d.cts                   0.92 kB │ gzip: 0.36 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/communityNodes.d.cts             0.91 kB │ gzip: 0.36 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/usage.d.cts                      0.91 kB │ gzip: 0.36 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/provisioning.d.cts               0.68 kB │ gzip: 0.30 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/security-settings.d.cts          0.53 kB │ gzip: 0.25 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/webhooks.d.cts                   0.47 kB │ gzip: 0.28 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/ui.d.cts                         0.36 kB │ gzip: 0.25 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/ai-usage.d.cts                   0.35 kB │ gzip: 0.23 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/module-settings.d.cts            0.34 kB │ gzip: 0.22 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/npsSurvey.d.cts                  0.33 kB │ gzip: 0.22 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/settings.d.cts                   0.30 kB │ gzip: 0.20 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/third-party-licenses.d.cts       0.28 kB │ gzip: 0.20 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/orchestration.d.cts              0.27 kB │ gzip: 0.20 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/ctas.d.cts                       0.25 kB │ gzip: 0.19 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/events.d.cts                     0.24 kB │ gzip: 0.18 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/tags.d.cts                       0.21 kB │ gzip: 0.16 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/types2.d.cts                     0.18 kB │ gzip: 0.15 kB
+@n8n/rest-api-client:build: ℹ [CJS] dist/index2.d.cts                     0.01 kB │ gzip: 0.03 kB
+@n8n/rest-api-client:build: ℹ [CJS] 73 files, total: 76.99 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/index.mjs                        8.23 kB │ gzip: 2.02 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/api/index.mjs                    7.89 kB │ gzip: 1.87 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/api/secretsProvider.ee.mjs       1.13 kB │ gzip: 0.25 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/api/users.mjs                    0.89 kB │ gzip: 0.34 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/api/nodeTypes.mjs                0.73 kB │ gzip: 0.27 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/api/breaking-changes.mjs         0.69 kB │ gzip: 0.32 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/api/externalSecrets.ee.mjs       0.56 kB │ gzip: 0.20 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/api/consent.mjs                  0.44 kB │ gzip: 0.24 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/api/credentialResolvers.mjs      0.42 kB │ gzip: 0.16 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/utils.mjs                        0.41 kB │ gzip: 0.23 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/api/eventbus.ee.mjs              0.40 kB │ gzip: 0.19 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/api/sso.mjs                      0.38 kB │ gzip: 0.18 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/api/roles.mjs                    0.35 kB │ gzip: 0.17 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/api/templates.mjs                0.35 kB │ gzip: 0.17 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/api/communityNodes.mjs           0.33 kB │ gzip: 0.17 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/api/cloudPlans.mjs               0.33 kB │ gzip: 0.18 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/api/workflowHistory.mjs          0.29 kB │ gzip: 0.14 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/api/usage.mjs                    0.28 kB │ gzip: 0.16 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/api/ldap.mjs                     0.27 kB │ gzip: 0.16 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/api/dynamic-banners.mjs          0.27 kB │ gzip: 0.19 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/api/mfa.mjs                      0.25 kB │ gzip: 0.16 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/api/api-keys.mjs                 0.24 kB │ gzip: 0.14 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/api/security-settings.mjs        0.18 kB │ gzip: 0.12 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/api/provisioning.mjs             0.18 kB │ gzip: 0.11 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/api/versions.mjs                 0.15 kB │ gzip: 0.12 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/api/third-party-licenses.mjs     0.13 kB │ gzip: 0.10 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/api/orchestration.mjs            0.12 kB │ gzip: 0.10 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/api/ai-usage.mjs                 0.12 kB │ gzip: 0.10 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/api/ui.mjs                       0.12 kB │ gzip: 0.10 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/api/module-settings.mjs          0.12 kB │ gzip: 0.10 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/api/npsSurvey.mjs                0.12 kB │ gzip: 0.10 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/api/ctas.mjs                     0.11 kB │ gzip: 0.10 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/api/events.mjs                   0.10 kB │ gzip: 0.09 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/api/settings.mjs                 0.10 kB │ gzip: 0.09 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/api/webhooks.mjs                 0.10 kB │ gzip: 0.09 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/api/execution.mjs                0.01 kB │ gzip: 0.03 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/api/tags.mjs                     0.01 kB │ gzip: 0.03 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/api/workflows.mjs                0.01 kB │ gzip: 0.03 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/types.mjs                        0.01 kB │ gzip: 0.03 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/utils2.mjs.map                  13.31 kB │ gzip: 4.30 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/users.mjs.map                    8.97 kB │ gzip: 1.88 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/utils2.mjs                       6.66 kB │ gzip: 2.38 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/templates.mjs.map                6.38 kB │ gzip: 1.73 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/secretsProvider.ee.mjs.map       6.09 kB │ gzip: 1.02 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/nodeTypes.mjs.map                5.72 kB │ gzip: 1.63 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/cloudPlans.mjs.map               3.69 kB │ gzip: 1.37 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/externalSecrets.ee.mjs.map       3.37 kB │ gzip: 0.85 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/secretsProvider.ee.mjs           3.34 kB │ gzip: 0.53 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/users.mjs                        3.26 kB │ gzip: 0.76 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/nodeTypes.mjs                    3.18 kB │ gzip: 0.97 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/workflowHistory.mjs.map          3.17 kB │ gzip: 0.94 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/sso.mjs.map                      2.87 kB │ gzip: 0.77 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/ldap.mjs.map                     2.61 kB │ gzip: 0.89 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/roles.mjs.map                    2.49 kB │ gzip: 0.75 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/eventbus.ee.mjs.map              2.31 kB │ gzip: 0.79 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/credentialResolvers.mjs.map      2.27 kB │ gzip: 0.62 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/communityNodes.mjs.map           2.04 kB │ gzip: 0.80 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/versions.mjs.map                 1.99 kB │ gzip: 0.76 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/externalSecrets.ee.mjs           1.92 kB │ gzip: 0.47 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/mfa.mjs.map                      1.85 kB │ gzip: 0.61 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/usage.mjs.map                    1.77 kB │ gzip: 0.63 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/api-keys.mjs.map                 1.73 kB │ gzip: 0.58 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/templates.mjs                    1.66 kB │ gzip: 0.51 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/api/breaking-changes.mjs.map     1.53 kB │ gzip: 0.60 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/sso.mjs                          1.48 kB │ gzip: 0.39 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/roles.mjs                        1.27 kB │ gzip: 0.41 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/credentialResolvers.mjs          1.25 kB │ gzip: 0.34 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/eventbus.ee.mjs                  1.20 kB │ gzip: 0.42 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/communityNodes.mjs               1.17 kB │ gzip: 0.50 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/workflowHistory.mjs              1.08 kB │ gzip: 0.35 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/provisioning.mjs.map             1.05 kB │ gzip: 0.46 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/cloudPlans.mjs                   0.97 kB │ gzip: 0.36 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/mfa.mjs                          0.95 kB │ gzip: 0.33 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/api/consent.mjs.map              0.94 kB │ gzip: 0.45 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/api/dynamic-banners.mjs.map      0.94 kB │ gzip: 0.50 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/usage.mjs                        0.92 kB │ gzip: 0.34 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/security-settings.mjs.map        0.88 kB │ gzip: 0.40 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/ldap.mjs                         0.88 kB │ gzip: 0.33 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/api-keys.mjs                     0.83 kB │ gzip: 0.31 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/webhooks.mjs.map                 0.71 kB │ gzip: 0.41 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/ui.mjs.map                       0.64 kB │ gzip: 0.40 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/versions.mjs                     0.62 kB │ gzip: 0.30 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/ai-usage.mjs.map                 0.58 kB │ gzip: 0.35 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/third-party-licenses.mjs.map     0.54 kB │ gzip: 0.35 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/module-settings.mjs.map          0.54 kB │ gzip: 0.32 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/orchestration.mjs.map            0.54 kB │ gzip: 0.35 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/npsSurvey.mjs.map                0.53 kB │ gzip: 0.33 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/settings.mjs.map                 0.50 kB │ gzip: 0.31 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/provisioning.mjs                 0.50 kB │ gzip: 0.25 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/security-settings.mjs            0.48 kB │ gzip: 0.24 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/ctas.mjs.map                     0.45 kB │ gzip: 0.31 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/events.mjs.map                   0.44 kB │ gzip: 0.30 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/orchestration.mjs                0.36 kB │ gzip: 0.24 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/third-party-licenses.mjs         0.35 kB │ gzip: 0.24 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/ui.mjs                           0.33 kB │ gzip: 0.23 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/npsSurvey.mjs                    0.32 kB │ gzip: 0.22 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/ai-usage.mjs                     0.31 kB │ gzip: 0.22 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/module-settings.mjs              0.30 kB │ gzip: 0.20 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/webhooks.mjs                     0.29 kB │ gzip: 0.21 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/events.mjs                       0.29 kB │ gzip: 0.21 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/settings.mjs                     0.27 kB │ gzip: 0.20 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/ctas.mjs                         0.26 kB │ gzip: 0.20 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/api.mjs                          0.01 kB │ gzip: 0.03 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/index.d.mts                     10.74 kB │ gzip: 2.55 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/api/index.d.mts                 10.33 kB │ gzip: 2.40 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/api/users.d.mts                  1.39 kB │ gzip: 0.45 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/api/secretsProvider.ee.d.mts     1.13 kB │ gzip: 0.24 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/api/templates.d.mts              1.12 kB │ gzip: 0.33 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/api/breaking-changes.d.mts       0.77 kB │ gzip: 0.32 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/api/dynamic-banners.d.mts        0.75 kB │ gzip: 0.40 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/api/nodeTypes.d.mts              0.73 kB │ gzip: 0.26 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/api/workflowHistory.d.mts        0.70 kB │ gzip: 0.23 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/api/consent.d.mts                0.57 kB │ gzip: 0.28 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/api/externalSecrets.ee.d.mts     0.56 kB │ gzip: 0.20 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/api/eventbus.ee.d.mts            0.48 kB │ gzip: 0.21 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/api/sso.d.mts                    0.45 kB │ gzip: 0.20 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/utils.d.mts                      0.43 kB │ gzip: 0.23 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/api/cloudPlans.d.mts             0.43 kB │ gzip: 0.22 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/api/credentialResolvers.d.mts    0.41 kB │ gzip: 0.15 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/api/ldap.d.mts                   0.37 kB │ gzip: 0.18 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/api/roles.d.mts                  0.35 kB │ gzip: 0.17 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/api/communityNodes.d.mts         0.33 kB │ gzip: 0.17 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/api/mfa.d.mts                    0.29 kB │ gzip: 0.17 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/api/usage.d.mts                  0.28 kB │ gzip: 0.16 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/api/versions.d.mts               0.26 kB │ gzip: 0.14 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/api/api-keys.d.mts               0.23 kB │ gzip: 0.14 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/api/workflows.d.mts              0.23 kB │ gzip: 0.13 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/api/provisioning.d.mts           0.22 kB │ gzip: 0.12 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/api/security-settings.d.mts      0.18 kB │ gzip: 0.12 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/api/third-party-licenses.d.mts   0.13 kB │ gzip: 0.10 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/api/orchestration.d.mts          0.12 kB │ gzip: 0.10 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/api/ai-usage.d.mts               0.12 kB │ gzip: 0.10 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/api/ui.d.mts                     0.12 kB │ gzip: 0.10 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/api/module-settings.d.mts        0.12 kB │ gzip: 0.10 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/api/npsSurvey.d.mts              0.12 kB │ gzip: 0.10 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/api/ctas.d.mts                   0.11 kB │ gzip: 0.10 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/api/events.d.mts                 0.10 kB │ gzip: 0.09 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/api/settings.d.mts               0.10 kB │ gzip: 0.09 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/api/webhooks.d.mts               0.10 kB │ gzip: 0.09 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/types.d.mts                      0.08 kB │ gzip: 0.08 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/api/tags.d.mts                   0.06 kB │ gzip: 0.07 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/api/execution.d.mts              0.01 kB │ gzip: 0.03 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/users.d.mts                      5.71 kB │ gzip: 1.29 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/templates.d.mts                  4.35 kB │ gzip: 1.11 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/secretsProvider.ee.d.mts         3.18 kB │ gzip: 0.56 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/cloudPlans.d.mts                 2.39 kB │ gzip: 0.91 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/nodeTypes.d.mts                  2.31 kB │ gzip: 0.62 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/utils2.d.mts                     2.25 kB │ gzip: 0.81 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/workflowHistory.d.mts            2.21 kB │ gzip: 0.68 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/ldap.d.mts                       1.75 kB │ gzip: 0.62 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/externalSecrets.ee.d.mts         1.59 kB │ gzip: 0.42 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/sso.d.mts                        1.41 kB │ gzip: 0.45 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/versions.d.mts                   1.31 kB │ gzip: 0.51 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/eventbus.ee.d.mts                1.29 kB │ gzip: 0.42 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/credentialResolvers.d.mts        1.26 kB │ gzip: 0.37 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/workflows.d.mts                  1.25 kB │ gzip: 0.47 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/roles.d.mts                      1.22 kB │ gzip: 0.40 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/mfa.d.mts                        0.94 kB │ gzip: 0.37 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/api-keys.d.mts                   0.92 kB │ gzip: 0.36 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/communityNodes.d.mts             0.91 kB │ gzip: 0.36 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/usage.d.mts                      0.91 kB │ gzip: 0.36 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/provisioning.d.mts               0.68 kB │ gzip: 0.30 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/security-settings.d.mts          0.53 kB │ gzip: 0.25 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/webhooks.d.mts                   0.47 kB │ gzip: 0.28 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/ui.d.mts                         0.36 kB │ gzip: 0.25 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/ai-usage.d.mts                   0.35 kB │ gzip: 0.23 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/module-settings.d.mts            0.34 kB │ gzip: 0.22 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/npsSurvey.d.mts                  0.33 kB │ gzip: 0.22 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/settings.d.mts                   0.30 kB │ gzip: 0.21 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/third-party-licenses.d.mts       0.28 kB │ gzip: 0.20 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/orchestration.d.mts              0.27 kB │ gzip: 0.20 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/ctas.d.mts                       0.25 kB │ gzip: 0.19 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/events.d.mts                     0.24 kB │ gzip: 0.18 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/tags.d.mts                       0.21 kB │ gzip: 0.16 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/types2.d.mts                     0.18 kB │ gzip: 0.15 kB
+@n8n/rest-api-client:build: ℹ [ESM] dist/index2.d.mts                     0.01 kB │ gzip: 0.03 kB
+@n8n/rest-api-client:build: ℹ [ESM] 176 files, total: 223.90 kB
+@n8n/rest-api-client:build: ✔ Build complete in 7416ms
+@n8n/task-runner:build: cache hit, replaying logs 0ca4846784a65d98
+@n8n/task-runner:build: 
+@n8n/task-runner:build: > @n8n/task-runner@2.10.0 build /home/bashar/claudeProjects/n8n/packages/@n8n/task-runner
+@n8n/task-runner:build: > tsc -p ./tsconfig.build.json && tsc-alias -p tsconfig.build.json
+@n8n/task-runner:build: 
+@n8n/ai-workflow-builder:build: cache hit, replaying logs e2b0288da4b1341b
+@n8n/ai-workflow-builder:build: 
+@n8n/ai-workflow-builder:build: > @n8n/ai-workflow-builder@1.10.0 build /home/bashar/claudeProjects/n8n/packages/@n8n/ai-workflow-builder.ee
+@n8n/ai-workflow-builder:build: > tsc -p ./tsconfig.build.json && tsc-alias -p tsconfig.build.json
+@n8n/ai-workflow-builder:build: 
+@n8n/db:build: cache hit, replaying logs 638746e8fd6c43f4
+@n8n/db:build: 
+@n8n/db:build: > @n8n/db@1.10.0 build /home/bashar/claudeProjects/n8n/packages/@n8n/db
+@n8n/db:build: > tsc -p tsconfig.build.json
+@n8n/db:build: 
+@n8n/backend-test-utils:build: cache hit, replaying logs 6b0fe9e6fb2f21f3
+@n8n/backend-test-utils:build: 
+@n8n/backend-test-utils:build: > @n8n/backend-test-utils@1.10.0 build /home/bashar/claudeProjects/n8n/packages/@n8n/backend-test-utils
+@n8n/backend-test-utils:build: > tsc -p tsconfig.build.json
+@n8n/backend-test-utils:build: 
+@n8n/chat:build: 
+@n8n/chat:build: > @n8n/chat@1.10.0 build /home/bashar/claudeProjects/n8n/packages/frontend/@n8n/chat
+@n8n/chat:build: > pnpm build:vite && pnpm build:bundle
+@n8n/chat:build: 
+@n8n/chat:build: 
+@n8n/chat:build: > @n8n/chat@1.10.0 build:vite /home/bashar/claudeProjects/n8n/packages/frontend/@n8n/chat
+@n8n/chat:build: > cross-env vite build
+@n8n/chat:build: 
+n8n-nodes-base:build: cache hit, replaying logs eee2bf54cc630cb8
+n8n-nodes-base:build: 
+n8n-nodes-base:build: > n8n-nodes-base@2.10.0 build /home/bashar/claudeProjects/n8n/packages/nodes-base
+n8n-nodes-base:build: > tsc --build tsconfig.build.cjs.json && pnpm copy-nodes-json && tsc-alias -p tsconfig.build.cjs.json && pnpm n8n-copy-static-files && pnpm n8n-generate-translations && pnpm n8n-generate-metadata && pnpm n8n-generate-node-defs
+n8n-nodes-base:build: 
+n8n-nodes-base:build: 
+n8n-nodes-base:build: > n8n-nodes-base@2.10.0 copy-nodes-json /home/bashar/claudeProjects/n8n/packages/nodes-base
+n8n-nodes-base:build: > node scripts/copy-nodes-json.js .
+n8n-nodes-base:build: 
+n8n-nodes-base:build: Default locale set to: [35men[0m
+n8n-nodes-base:build: No translation required - Skipping translations build...
+n8n-nodes-base:build: (node:25487) [DEP0030] DeprecationWarning: SlowBuffer() is deprecated. Please use Buffer.allocUnsafeSlow()
+n8n-nodes-base:build: (Use `node --trace-deprecation ...` to show where the warning was created)
+n8n-nodes-base:build: Generated node definitions for 418 nodes in /home/bashar/claudeProjects/n8n/packages/nodes-base/dist/node-definitions
+@n8n/n8n-nodes-langchain:build: cache hit, replaying logs eae8b0f9d4c36b96
+@n8n/n8n-nodes-langchain:build: 
+@n8n/n8n-nodes-langchain:build: > @n8n/n8n-nodes-langchain@2.10.0 build /home/bashar/claudeProjects/n8n/packages/@n8n/nodes-langchain
+@n8n/n8n-nodes-langchain:build: > tsc --build tsconfig.build.json && pnpm copy-nodes-json && tsc-alias -p tsconfig.build.json && pnpm n8n-copy-static-files && pnpm n8n-generate-metadata && pnpm n8n-generate-node-defs
+@n8n/n8n-nodes-langchain:build: 
+@n8n/n8n-nodes-langchain:build: 
+@n8n/n8n-nodes-langchain:build: > @n8n/n8n-nodes-langchain@2.10.0 copy-nodes-json /home/bashar/claudeProjects/n8n/packages/@n8n/nodes-langchain
+@n8n/n8n-nodes-langchain:build: > node ../../nodes-base/scripts/copy-nodes-json.js .
+@n8n/n8n-nodes-langchain:build: 
+@n8n/n8n-nodes-langchain:build: Generated node definitions for 89 nodes in /home/bashar/claudeProjects/n8n/packages/@n8n/nodes-langchain/dist/node-definitions
+@n8n/chat:build: rolldown-vite v7.3.1 building client environment for production...
+@n8n/chat:build: [2K@n8n/chat:build: transforming...✓ 2947 modules transformed.
+@n8n/chat:build: rendering chunks...
+@n8n/chat:build: [plugin builtin:vite-reporter] 
+@n8n/chat:build: (!) /home/bashar/claudeProjects/n8n/packages/frontend/@n8n/design-system/src/locale/lang/en.ts is dynamically imported by /home/bashar/claudeProjects/n8n/packages/frontend/@n8n/design-system/src/locale/index.ts but also statically imported by /home/bashar/claudeProjects/n8n/packages/frontend/@n8n/design-system/src/locale/index.ts, dynamic import will not move module into another chunk.
+@n8n/chat:build: 
+@n8n/chat:build: [lightningcss minify] 'global' is not recognized as a valid pseudo-class. Did you mean '::global' (pseudo-element) or is this a typo?
+@n8n/chat:build: 1268 |   */
+@n8n/chat:build: 1269 |  /** @deprecated Use a semantic variant instead of success color */
+@n8n/chat:build: 1270 |  :global(.n8n-button--success) {
+@n8n/chat:build:      |          ^
+@n8n/chat:build: 1271 |    --button--color--background: var(--color--success);
+@n8n/chat:build: 1272 |    --button--color--background-hover: var(--color--success--shade-1);
+@n8n/chat:build: [lightningcss minify] 'global' is not recognized as a valid pseudo-class. Did you mean '::global' (pseudo-element) or is this a typo?
+@n8n/chat:build: 1277 |    --button--shadow--active: 0 0 0 1px var(--color--success--shade-1);
+@n8n/chat:build: 1278 |  }
+@n8n/chat:build: 1279 |  :global(.n8n-button--success):disabled, :global(.n8n-button--success)[aria-disabled=true] {
+@n8n/chat:build:      |          ^
+@n8n/chat:build: 1280 |    --button--color--background: var(--color--success--tint-3);
+@n8n/chat:build: 1281 |    --button--shadow: 0 0 0 1px var(--color--success--tint-3);
+@n8n/chat:build: [lightningcss minify] 'global' is not recognized as a valid pseudo-class. Did you mean '::global' (pseudo-element) or is this a typo?
+@n8n/chat:build: 1277 |    --button--shadow--active: 0 0 0 1px var(--color--success--shade-1);
+@n8n/chat:build: 1278 |  }
+@n8n/chat:build: 1279 |  :global(.n8n-button--success):disabled, :global(.n8n-button--success)[aria-disabled=true] {
+@n8n/chat:build:      |                                                  ^
+@n8n/chat:build: 1280 |    --button--color--background: var(--color--success--tint-3);
+@n8n/chat:build: 1281 |    --button--shadow: 0 0 0 1px var(--color--success--tint-3);
+@n8n/chat:build: [lightningcss minify] 'global' is not recognized as a valid pseudo-class. Did you mean '::global' (pseudo-element) or is this a typo?
+@n8n/chat:build: 1283 |  
+@n8n/chat:build: 1284 |  /** @deprecated Use a semantic variant instead of warning color */
+@n8n/chat:build: 1285 |  :global(.n8n-button--warning) {
+@n8n/chat:build:      |          ^
+@n8n/chat:build: 1286 |    --button--color--background: var(--color--warning);
+@n8n/chat:build: 1287 |    --button--color--background-hover: var(--color--warning--shade-1);
+@n8n/chat:build: [lightningcss minify] 'global' is not recognized as a valid pseudo-class. Did you mean '::global' (pseudo-element) or is this a typo?
+@n8n/chat:build: 1292 |    --button--shadow--active: 0 0 0 1px var(--color--warning--shade-1);
+@n8n/chat:build: 1293 |  }
+@n8n/chat:build: 1294 |  :global(.n8n-button--warning):disabled, :global(.n8n-button--warning)[aria-disabled=true] {
+@n8n/chat:build:      |          ^
+@n8n/chat:build: 1295 |    --button--color--background: var(--color--warning--tint-1);
+@n8n/chat:build: 1296 |    --button--shadow: 0 0 0 1px var(--color--warning--tint-1);
+@n8n/chat:build: [lightningcss minify] 'global' is not recognized as a valid pseudo-class. Did you mean '::global' (pseudo-element) or is this a typo?
+@n8n/chat:build: 1292 |    --button--shadow--active: 0 0 0 1px var(--color--warning--shade-1);
+@n8n/chat:build: 1293 |  }
+@n8n/chat:build: 1294 |  :global(.n8n-button--warning):disabled, :global(.n8n-button--warning)[aria-disabled=true] {
+@n8n/chat:build:      |                                                  ^
+@n8n/chat:build: 1295 |    --button--color--background: var(--color--warning--tint-1);
+@n8n/chat:build: 1296 |    --button--shadow: 0 0 0 1px var(--color--warning--tint-1);
+@n8n/chat:build: 
+@n8n/chat:build: [vite:dts] Start generate declaration files...
+@n8n/chat:build: [vite:dts] Declaration files built in 27400ms.
+@n8n/chat:build: 
+@n8n/chat:build: computing gzip size...
+@n8n/chat:build: dist/chat.css       61.77 kB │ gzip:  10.30 kB
+@n8n/chat:build: dist/chat.es.js  1,283.21 kB │ gzip: 337.73 kB
+@n8n/chat:build: [2K@n8n/chat:build: transforming...✓ 2947 modules transformed.
+@n8n/chat:build: rendering chunks...
+@n8n/chat:build: [lightningcss minify] 'global' is not recognized as a valid pseudo-class. Did you mean '::global' (pseudo-element) or is this a typo?
+@n8n/chat:build: 1268 |   */
+@n8n/chat:build: 1269 |  /** @deprecated Use a semantic variant instead of success color */
+@n8n/chat:build: 1270 |  :global(.n8n-button--success) {
+@n8n/chat:build:      |          ^
+@n8n/chat:build: 1271 |    --button--color--background: var(--color--success);
+@n8n/chat:build: 1272 |    --button--color--background-hover: var(--color--success--shade-1);
+@n8n/chat:build: [lightningcss minify] 'global' is not recognized as a valid pseudo-class. Did you mean '::global' (pseudo-element) or is this a typo?
+@n8n/chat:build: 1277 |    --button--shadow--active: 0 0 0 1px var(--color--success--shade-1);
+@n8n/chat:build: 1278 |  }
+@n8n/chat:build: 1279 |  :global(.n8n-button--success):disabled, :global(.n8n-button--success)[aria-disabled=true] {
+@n8n/chat:build:      |          ^
+@n8n/chat:build: 1280 |    --button--color--background: var(--color--success--tint-3);
+@n8n/chat:build: 1281 |    --button--shadow: 0 0 0 1px var(--color--success--tint-3);
+@n8n/chat:build: [lightningcss minify] 'global' is not recognized as a valid pseudo-class. Did you mean '::global' (pseudo-element) or is this a typo?
+@n8n/chat:build: 1277 |    --button--shadow--active: 0 0 0 1px var(--color--success--shade-1);
+@n8n/chat:build: 1278 |  }
+@n8n/chat:build: 1279 |  :global(.n8n-button--success):disabled, :global(.n8n-button--success)[aria-disabled=true] {
+@n8n/chat:build:      |                                                  ^
+@n8n/chat:build: 1280 |    --button--color--background: var(--color--success--tint-3);
+@n8n/chat:build: 1281 |    --button--shadow: 0 0 0 1px var(--color--success--tint-3);
+@n8n/chat:build: [lightningcss minify] 'global' is not recognized as a valid pseudo-class. Did you mean '::global' (pseudo-element) or is this a typo?
+@n8n/chat:build: 1283 |  
+@n8n/chat:build: 1284 |  /** @deprecated Use a semantic variant instead of warning color */
+@n8n/chat:build: 1285 |  :global(.n8n-button--warning) {
+@n8n/chat:build:      |          ^
+@n8n/chat:build: 1286 |    --button--color--background: var(--color--warning);
+@n8n/chat:build: 1287 |    --button--color--background-hover: var(--color--warning--shade-1);
+@n8n/chat:build: [lightningcss minify] 'global' is not recognized as a valid pseudo-class. Did you mean '::global' (pseudo-element) or is this a typo?
+@n8n/chat:build: 1292 |    --button--shadow--active: 0 0 0 1px var(--color--warning--shade-1);
+@n8n/chat:build: 1293 |  }
+@n8n/chat:build: 1294 |  :global(.n8n-button--warning):disabled, :global(.n8n-button--warning)[aria-disabled=true] {
+@n8n/chat:build:      |          ^
+@n8n/chat:build: 1295 |    --button--color--background: var(--color--warning--tint-1);
+@n8n/chat:build: 1296 |    --button--shadow: 0 0 0 1px var(--color--warning--tint-1);
+@n8n/chat:build: [lightningcss minify] 'global' is not recognized as a valid pseudo-class. Did you mean '::global' (pseudo-element) or is this a typo?
+@n8n/chat:build: 1292 |    --button--shadow--active: 0 0 0 1px var(--color--warning--shade-1);
+@n8n/chat:build: 1293 |  }
+@n8n/chat:build: 1294 |  :global(.n8n-button--warning):disabled, :global(.n8n-button--warning)[aria-disabled=true] {
+@n8n/chat:build:      |                                                  ^
+@n8n/chat:build: 1295 |    --button--color--background: var(--color--warning--tint-1);
+@n8n/chat:build: 1296 |    --button--shadow: 0 0 0 1px var(--color--warning--tint-1);
+@n8n/chat:build: computing gzip size...
+@n8n/chat:build: dist/chat.css      61.77 kB │ gzip:  10.30 kB
+@n8n/chat:build: dist/chat.umd.js  952.83 kB │ gzip: 297.20 kB
+@n8n/chat:build: ✓ built in 1m 15s
+@n8n/chat:build: 
+@n8n/chat:build: > @n8n/chat@1.10.0 build:bundle /home/bashar/claudeProjects/n8n/packages/frontend/@n8n/chat
+@n8n/chat:build: > cross-env INCLUDE_VUE=true vite build
+@n8n/chat:build: 
+@n8n/chat:build: rolldown-vite v7.3.1 building client environment for production...
+@n8n/chat:build: 
+@n8n/chat:build: <--- Last few GCs --->
+@n8n/chat:build: 
+@n8n/chat:build: [80790:0x30247000]    52930 ms: Scavenge 2028.6 (2046.2) -> 2024.4 (2062.2) MB, pooled: 0 MB, 9.40 / 0.01 ms  (average mu = 0.386, current mu = 0.386) allocation failure; 
+@n8n/chat:build: [80790:0x30247000]    53894 ms: Mark-Compact (reduce) 2034.3 (2063.0) -> 2012.5 (2027.5) MB, pooled: 0 MB, 54.99 / 1.14 ms  (+ 767.5 ms in 153 steps since start of marking, biggest step 5.7 ms, walltime since start of marking 964 ms) (average mu = 0.393, 
+@n8n/chat:build: FATAL ERROR: Ineffective mark-compacts near heap limit Allocation failed - JavaScript heap out of memory
+@n8n/chat:build: ----- Native stack trace -----
+@n8n/chat:build: 
+@n8n/chat:build:  1: 0x72dece node::OOMErrorHandler(char const*, v8::OOMDetails const&) [node]
+@n8n/chat:build:  2: 0xba1b20  [node]
+@n8n/chat:build:  3: 0xba1c0f  [node]
+@n8n/chat:build:  4: 0xe3a745  [node]
+@n8n/chat:build:  5: 0xe3a772  [node]
+@n8n/chat:build:  6: 0xe3aa6a  [node]
+@n8n/chat:build:  7: 0xe4af8a  [node]
+@n8n/chat:build:  8: 0xe4f330  [node]
+@n8n/chat:build:  9: 0x18e22f1  [node]
+@n8n/chat:build: [2K@n8n/chat:build: transforming... ELIFECYCLE  Command failed with exit code 1.
+@n8n/chat:build:  ELIFECYCLE  Command failed with exit code 1.
+@n8n/chat:build: ERROR: command finished with error: command (/home/bashar/claudeProjects/n8n/packages/frontend/@n8n/chat) /home/bashar/.nvm/versions/node/v24.13.0/bin/pnpm run build exited (1)
+@n8n/chat#build: command (/home/bashar/claudeProjects/n8n/packages/frontend/@n8n/chat) /home/bashar/.nvm/versions/node/v24.13.0/bin/pnpm run build exited (1)
+
+ Tasks:    36 successful, 37 total
+Cached:    36 cached, 37 total
+  Time:    3m40.481s 
+Failed:    @n8n/chat#build
+
+ ERROR  run failed: command  exited (1)
