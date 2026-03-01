@@ -22,13 +22,27 @@ export const leadOperations: INodeProperties[] = [
 export const leadDescription: INodeProperties[] = [
 	// ── create ──
 	{
-		displayName: 'Fields (JSON)',
-		name: 'fieldsJson',
-		type: 'json',
-		default: '{\n  "name": ""\n}',
-		required: true,
-		description: 'JSON object with Odoo field names and values. Common fields: name, partner_id, contact_name, email_from, phone, expected_revenue, probability, date_deadline, user_id, team_id, stage_id, priority, description.',
+		displayName: 'Fields',
+		name: 'fieldsToCreateOrUpdate',
+		type: 'fixedCollection',
+		typeOptions: { multipleValues: true, multipleValueButtonText: 'Add Field' },
+		default: {},
+		placeholder: 'Add Field',
 		displayOptions: { show: { operation: ['create'], resource: ['lead'] } },
+		options: [
+			{
+				displayName: 'Field Record',
+				name: 'fields',
+				values: [
+					{
+						displayName: 'Field Name or ID', name: 'fieldName', type: 'options', default: '',
+						description: 'Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>',
+						typeOptions: { loadOptionsMethod: 'getModelFields', loadOptionsDependsOn: ['resource'] },
+					},
+					{ displayName: 'Value', name: 'fieldValue', type: 'string', default: '' },
+				],
+			},
+		],
 	},
 
 	// ── get / delete ──
@@ -57,12 +71,26 @@ export const leadDescription: INodeProperties[] = [
 		displayOptions: { show: { operation: ['update'], resource: ['lead'] } },
 	},
 	{
-		displayName: 'Fields (JSON)',
-		name: 'fieldsJson',
-		type: 'json',
-		default: '{}',
-		required: true,
-		description: 'JSON object with Odoo field names and values to update.',
+		displayName: 'Update Fields',
+		name: 'fieldsToCreateOrUpdate',
+		type: 'fixedCollection',
+		typeOptions: { multipleValues: true, multipleValueButtonText: 'Add Field' },
+		default: {},
+		placeholder: 'Add Field',
 		displayOptions: { show: { operation: ['update'], resource: ['lead'] } },
+		options: [
+			{
+				displayName: 'Field Record',
+				name: 'fields',
+				values: [
+					{
+						displayName: 'Field Name or ID', name: 'fieldName', type: 'options', default: '',
+						description: 'Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>',
+						typeOptions: { loadOptionsMethod: 'getModelFields', loadOptionsDependsOn: ['resource'] },
+					},
+					{ displayName: 'Value', name: 'fieldValue', type: 'string', default: '' },
+				],
+			},
+		],
 	},
 ];

@@ -10,8 +10,9 @@ import type {
 	INodePropertyOptions,
 	INodeType,
 	INodeTypeDescription,
+	JsonObject,
 } from 'n8n-workflow';
-import { NodeConnectionTypes } from 'n8n-workflow';
+import { NodeConnectionTypes, NodeApiError } from 'n8n-workflow';
 
 import {
 	contactDescription,
@@ -185,15 +186,16 @@ export class OdooGeneric implements INodeType {
 						? (this.getNodeParameter('customModel', i) as string)
 						: RESOURCE_MODEL_MAP[resource] || resource;
 
+				if (!model || !model.trim()) {
+					throw new NodeApiError(this.getNode(), {
+						message: 'Model name is empty',
+						description: 'Please specify a valid Odoo model name (e.g. "res.partner", "sale.order")',
+					} as JsonObject);
+				}
+
 				if (operation === 'create') {
-					let fields: IDataObject;
-					if (resource === 'custom') {
-						const rawFields = this.getNodeParameter('fieldsToCreateOrUpdate', i) as IDataObject;
-						fields = processNameValueFields(rawFields);
-					} else {
-						const raw = this.getNodeParameter('fieldsJson', i);
-						fields = typeof raw === 'string' ? JSON.parse(raw) as IDataObject : raw as IDataObject;
-					}
+					const rawFields = this.getNodeParameter('fieldsToCreateOrUpdate', i) as IDataObject;
+					const fields = processNameValueFields(rawFields);
 					responseData = await odooCreate.call(this, credentials, model, fields);
 				}
 
@@ -215,14 +217,8 @@ export class OdooGeneric implements INodeType {
 
 				if (operation === 'update') {
 					const recordId = this.getNodeParameter(getRecordIdParam(resource), i) as string;
-					let fields: IDataObject;
-					if (resource === 'custom') {
-						const rawFields = this.getNodeParameter('fieldsToCreateOrUpdate', i) as IDataObject;
-						fields = processNameValueFields(rawFields);
-					} else {
-						const raw = this.getNodeParameter('fieldsJson', i);
-						fields = typeof raw === 'string' ? JSON.parse(raw) as IDataObject : raw as IDataObject;
-					}
+					const rawFields = this.getNodeParameter('fieldsToCreateOrUpdate', i) as IDataObject;
+					const fields = processNameValueFields(rawFields);
 					responseData = await odooUpdate.call(this, credentials, model, recordId, fields);
 				}
 
@@ -238,8 +234,11 @@ export class OdooGeneric implements INodeType {
 					let methodArgs: unknown[];
 					try {
 						methodArgs = JSON.parse(methodArgsRaw) as unknown[];
-					} catch {
-						methodArgs = [];
+					} catch (error) {
+						throw new NodeApiError(this.getNode(), {
+							message: 'Invalid JSON in "Method Arguments"',
+							description: `${(error as SyntaxError).message}. Must be a JSON array, e.g. [1, "hello", {"key": "value"}]`,
+						} as JsonObject);
 					}
 					responseData = await odooExecuteMethod.call(
 						this, credentials, model, methodName, recordId || undefined, methodArgs,

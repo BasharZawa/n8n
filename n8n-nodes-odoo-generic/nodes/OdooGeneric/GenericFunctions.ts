@@ -93,6 +93,19 @@ export async function odooJsonRpcRequest(
 	}
 }
 
+const LOGIN_CACHE_TTL_MS = 5 * 60 * 1000; // 5 minutes
+
+interface CachedLogin {
+	uid: number;
+	expiresAt: number;
+}
+
+const loginCache = new Map<string, CachedLogin>();
+
+function loginCacheKey(url: string, db: string, username: string): string {
+	return `${normalizeUrl(url)}|${db}|${username}`;
+}
+
 export async function odooJsonRpcLogin(
 	this: IHookFunctions | IExecuteFunctions | ILoadOptionsFunctions,
 	db: string,
@@ -100,6 +113,10 @@ export async function odooJsonRpcLogin(
 	password: string,
 	url: string,
 ): Promise<number> {
+	const cacheKey = loginCacheKey(url, db, username);
+	const cached = loginCache.get(cacheKey);
+	if (cached && cached.expiresAt > Date.now()) return cached.uid;
+
 	const body: IOdooJsonRpcBody = {
 		jsonrpc: '2.0',
 		method: 'call',
@@ -116,7 +133,9 @@ export async function odooJsonRpcLogin(
 			message: 'Authentication failed. Check your credentials and database name.',
 		} as JsonObject);
 	}
-	return result as unknown as number;
+	const uid = result as unknown as number;
+	loginCache.set(cacheKey, { uid, expiresAt: Date.now() + LOGIN_CACHE_TTL_MS });
+	return uid;
 }
 
 function buildJsonRpcBody(
@@ -185,7 +204,14 @@ export async function odooJson2Request(
 
 // ─── Protocol Auto-Detection ────────────────────────────────────────────────
 
-const protocolCache = new Map<string, ResolvedProtocol>();
+const PROTOCOL_CACHE_TTL_MS = 5 * 60 * 1000; // 5 minutes
+
+interface CachedProtocol {
+	protocol: ResolvedProtocol;
+	expiresAt: number;
+}
+
+const protocolCache = new Map<string, CachedProtocol>();
 
 export async function detectProtocol(
 	this: IHookFunctions | IExecuteFunctions | ILoadOptionsFunctions,
@@ -194,7 +220,7 @@ export async function detectProtocol(
 ): Promise<ResolvedProtocol> {
 	const cacheKey = normalizeUrl(url);
 	const cached = protocolCache.get(cacheKey);
-	if (cached) return cached;
+	if (cached && cached.expiresAt > Date.now()) return cached.protocol;
 
 	try {
 		// Try JSON-2 API probe
@@ -207,10 +233,10 @@ export async function detectProtocol(
 			undefined,
 			{ limit: 1 },
 		);
-		protocolCache.set(cacheKey, 'json2');
+		protocolCache.set(cacheKey, { protocol: 'json2', expiresAt: Date.now() + PROTOCOL_CACHE_TTL_MS });
 		return 'json2';
 	} catch {
-		protocolCache.set(cacheKey, 'jsonrpc');
+		protocolCache.set(cacheKey, { protocol: 'jsonrpc', expiresAt: Date.now() + PROTOCOL_CACHE_TTL_MS });
 		return 'jsonrpc';
 	}
 }

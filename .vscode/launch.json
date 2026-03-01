@@ -30,7 +30,10 @@
 			"skipFiles": ["<node_internals>/**"],
 			"type": "node",
 			"outputCapture": "std",
-			"killBehavior": "forceful"
+			"killBehavior": "forceful",
+			"env": {
+				"N8N_CUSTOM_EXTENSIONS": "${workspaceFolder}/n8n-nodes-odoo-generic"
+			}
 		},
 		{
 			"name": "Launch n8n CLI dev with debug",

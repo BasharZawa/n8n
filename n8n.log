@@ -24,3 +24,9 @@ http://localhost:5678
 (node:43747) [DEP0060] DeprecationWarning: The `util._extend` API is deprecated. Please use Object.assign() instead.
 timeout of 6000ms exceeded
 Error while fetching community nodes: timeout of 6000ms exceeded
+Received SIGTERM. Shutting down...
+[runnner:js] Received SIGTERM signal, shutting down...
+[runnner:js] Task runner stopped
+
+Stopping n8n...
+ ELIFECYCLE  Command failed.

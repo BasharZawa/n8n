@@ -7,7 +7,8 @@
     "n8n-community-node-package"
   ],
   "scripts": {
-    "build": "tsc --build tsconfig.json",
+    "build": "tsc --build tsconfig.json && pnpm copy-icons",
+    "copy-icons": "cp nodes/OdooGeneric/odoo.svg dist/nodes/OdooGeneric/odoo.svg",
     "test": "jest",
     "lint": "tsc --noEmit"
   },
