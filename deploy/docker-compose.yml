@@ -1,0 +1,19 @@
+services:
+  n8n:
+    build:
+      context: ..
+      dockerfile: deploy/Dockerfile
+    container_name: n8n
+    ports:
+      - "5678:5678"
+    volumes:
+      # Persist n8n data (credentials, execution history, encryption key)
+      - n8n_data:/home/node/.n8n
+      # Mount workflows folder so you can import without rebuilding the image
+      - ../workflows:/workflows
+    env_file:
+      - ../.env
+    restart: unless-stopped
+
+volumes:
+  n8n_data:
