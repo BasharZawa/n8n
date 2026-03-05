@@ -503,3 +503,65 @@ That we do not have any potential problems later it is sadly necessary to sign a
 We used the most simple one that exists. It is from [Indie Open Source](https://indieopensource.com/forms/cla) which uses plain English and is literally only a few lines long.
 
 Once a pull request is opened, an automated bot will promptly leave a comment requesting the agreement to be signed. The pull request can only be merged once the signature is obtained.
+
+## Team Automation Setup (Workflows & Custom Nodes)
+
+### First-Time Local Setup
+
+```bash
+# 1. Install dependencies
+pnpm install
+
+# 2. Build custom nodes
+cd custom-nodes/n8n-nodes-odoo-generic && pnpm build && cd ../..
+
+# 3. Set up environment
+cp .env.example .env
+# Edit .env — at minimum, set N8N_ENCRYPTION_KEY to a random value
+
+# 4. Start n8n
+pnpm dev
+
+# 5. Create credentials in the n8n UI
+# Open http://localhost:5678, go to Credentials, and create each credential
+# listed in workflows/README.md — use the EXACT names in that table.
+
+# 6. Import all workflows
+n8n import:workflow --input=./workflows/
+```
+
+### Daily Workflow
+
+**Pull latest workflows from teammates:**
+```bash
+git pull
+n8n import:workflow --input=./workflows/
+```
+
+**Export your workflows to share:**
+```bash
+n8n export:workflow --all --output=./workflows/<domain>/
+git add workflows/ && git commit -m "feat(workflows): <description>"
+git push
+```
+
+### Adding a New Custom Node
+
+1. Create a new package under `custom-nodes/<node-name>/`
+2. `- custom-nodes/*` is already in `pnpm-workspace.yaml` (covers all new nodes automatically)
+3. Add a `RUN` build step in `deploy/Dockerfile` for the new node
+4. Append its `dist/` path to `N8N_CUSTOM_EXTENSIONS` in `.env.example` and `deploy/Dockerfile`
+5. Document any new credentials it requires in `workflows/README.md`
+
+### Deploying to Server (admin only)
+
+```bash
+# Build and start
+cd deploy && docker compose up -d --build
+
+# Import workflows after deploy
+docker exec -it n8n n8n import:workflow --input=/workflows/
+
+# View logs
+docker compose -f deploy/docker-compose.yml logs -f n8n
+```
