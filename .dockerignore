@@ -18,6 +18,13 @@
 !packages/@n8n/task-runner-python
 !packages/@n8n/task-runner-python/**
 
+# === our custom nodes (deploy/Dockerfile) ===
+!custom-nodes
+!custom-nodes/**
+# re-exclude node_modules (pnpm symlinks break inside Docker)
+custom-nodes/**/node_modules
+custom-nodes/**/node_modules/**
+
 # === Docker build files (entrypoints, configs) ===
 !docker
 !docker/images
