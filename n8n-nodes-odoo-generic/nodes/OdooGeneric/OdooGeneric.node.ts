@@ -200,10 +200,25 @@ export class OdooGeneric implements INodeType {
 				}
 
 				if (operation === 'get') {
-					const recordId = this.getNodeParameter(getRecordIdParam(resource), i) as string;
 					const options = this.getNodeParameter('options', i, {}) as IDataObject;
 					const fieldsList = (options.fieldsList as string[]) || [];
-					responseData = await odooGet.call(this, credentials, model, recordId, fieldsList);
+
+					if (resource === 'contact') {
+						const getBy = this.getNodeParameter('getBy', i, 'id') as string;
+						if (getBy === 'name') {
+							const contactName = this.getNodeParameter('contactName', i) as string;
+							const filters: IOdooFilterOperations = {
+								filter: [{ fieldName: 'name', operator: 'ilike', value: contactName }],
+							};
+							responseData = await odooGetAll.call(this, credentials, model, filters, fieldsList, 0);
+						} else {
+							const recordId = this.getNodeParameter(getRecordIdParam(resource), i) as string;
+							responseData = await odooGet.call(this, credentials, model, recordId, fieldsList);
+						}
+					} else {
+						const recordId = this.getNodeParameter(getRecordIdParam(resource), i) as string;
+						responseData = await odooGet.call(this, credentials, model, recordId, fieldsList);
+					}
 				}
 
 				if (operation === 'getAll') {

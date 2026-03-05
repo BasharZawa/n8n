@@ -45,14 +45,44 @@ export const contactDescription: INodeProperties[] = [
 		],
 	},
 
-	// ── get / delete ──
+	// ── get ──
+	{
+		displayName: 'Get By',
+		name: 'getBy',
+		type: 'options',
+		default: 'id',
+		displayOptions: { show: { operation: ['get'], resource: ['contact'] } },
+		options: [
+			{ name: 'ID', value: 'id' },
+			{ name: 'Name', value: 'name' },
+		],
+	},
 	{
 		displayName: 'Contact ID',
 		name: 'contactId',
 		type: 'string',
 		default: '',
 		required: true,
-		displayOptions: { show: { operation: ['get', 'delete'], resource: ['contact'] } },
+		displayOptions: { show: { operation: ['get'], resource: ['contact'], getBy: ['id'] } },
+	},
+	{
+		displayName: 'Contact Name',
+		name: 'contactName',
+		type: 'string',
+		default: '',
+		required: true,
+		description: 'Search by name (case-insensitive, partial match)',
+		displayOptions: { show: { operation: ['get'], resource: ['contact'], getBy: ['name'] } },
+	},
+
+	// ── delete ──
+	{
+		displayName: 'Contact ID',
+		name: 'contactId',
+		type: 'string',
+		default: '',
+		required: true,
+		displayOptions: { show: { operation: ['delete'], resource: ['contact'] } },
 	},
 
 	// ── getAll ──
