@@ -227,7 +227,10 @@ export class OdooGeneric implements INodeType {
 					const options = this.getNodeParameter('options', i, {}) as IDataObject;
 					const fieldsList = (options.fieldsList as string[]) || [];
 					const filters = this.getNodeParameter('filterRequest', i, {}) as IOdooFilterOperations;
-					responseData = await odooGetAll.call(this, credentials, model, filters, fieldsList, limit);
+					const rawDomain = resource === 'custom'
+						? (this.getNodeParameter('rawDomain', i, '') as string)
+						: '';
+					responseData = await odooGetAll.call(this, credentials, model, filters, fieldsList, limit, 0, rawDomain);
 				}
 
 				if (operation === 'update') {

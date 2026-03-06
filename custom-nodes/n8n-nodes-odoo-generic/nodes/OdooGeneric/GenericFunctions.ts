@@ -43,14 +43,46 @@ export function resolveModel(resource: string, customModel?: string): string {
 export function processFilters(value: IOdooFilterOperations): unknown[][] {
 	return (value.filter || []).map((item) => {
 		const operator = mapFilterOperationToJSONRPC[item.operator] || item.operator;
-		return [item.fieldName, operator, item.value];
+		let filterValue: unknown = item.value;
+
+		// For 'in' / 'not in' operators, Odoo expects an array.
+		// Parse JSON arrays or split comma-separated strings.
+		if (operator === 'in' || operator === 'not in') {
+			if (typeof filterValue === 'string') {
+				const trimmed = filterValue.trim();
+				if (trimmed.startsWith('[')) {
+					try {
+						filterValue = JSON.parse(trimmed);
+					} catch {
+						filterValue = trimmed.slice(1, -1).split(',').map((s) => s.trim());
+					}
+				} else {
+					filterValue = trimmed.split(',').map((s) => s.trim());
+				}
+				// Auto-cast numeric array items
+				filterValue = (filterValue as string[]).map((v) =>
+					typeof v === 'string' && v !== '' && !isNaN(Number(v)) ? Number(v) : v,
+				);
+			}
+		} else if (typeof filterValue === 'string' && filterValue !== '' && !isNaN(Number(filterValue))) {
+			// Auto-cast single numeric values (e.g. partner_id = "14" → 14)
+			filterValue = Number(filterValue);
+		}
+
+		return [item.fieldName, operator, filterValue];
 	});
 }
 
 export function processNameValueFields(value: IDataObject): IDataObject {
 	const data = value as unknown as IOdooNameValueFields;
 	return (data?.fields || []).reduce<IDataObject>((acc, record) => {
-		acc[record.fieldName] = record.fieldValue;
+		const v = record.fieldValue;
+		// Auto-cast numeric strings to numbers (required for Many2one, Integer, Float fields)
+		if (typeof v === 'string' && v !== '' && !isNaN(Number(v))) {
+			acc[record.fieldName] = Number(v);
+		} else {
+			acc[record.fieldName] = v;
+		}
 		return acc;
 	}, {});
 }
@@ -145,14 +177,15 @@ function buildJsonRpcBody(
 	model: string,
 	method: string,
 	args: unknown[],
+	kwargs: Record<string, unknown> = {},
 ): IOdooJsonRpcBody {
 	return {
 		jsonrpc: '2.0',
 		method: 'call',
 		params: {
 			service: 'object',
-			method: 'execute',
-			args: [db, userID, password, model, method, ...args],
+			method: 'execute_kw',
+			args: [db, userID, password, model, method, args, kwargs],
 		},
 		id: randomInt(100),
 	};
@@ -323,11 +356,14 @@ export async function odooGetAll(
 	fieldsList?: string[],
 	limit = 0,
 	offset = 0,
+	rawDomain?: string,
 ): Promise<IDataObject[]> {
 	const protocol = await resolveProtocol.call(this, credentials);
 	const url = normalizeUrl(credentials.url);
 
-	if (protocol === 'json2') {
+	// rawDomain with OR conditions isn't reliably handled by JSON-2 REST query params,
+	// so fall back to JSON-RPC for complex domain searches.
+	if (protocol === 'json2' && !rawDomain?.trim()) {
 		const qs: IDataObject = {};
 		if (fieldsList && fieldsList.length > 0) {
 			qs.fields = fieldsList.join(',');
@@ -335,7 +371,6 @@ export async function odooGetAll(
 		if (limit > 0) qs.limit = limit;
 		if (offset > 0) qs.offset = offset;
 		if (filters?.filter?.length) {
-			// JSON-2 uses domain parameter as JSON string
 			qs.domain = JSON.stringify(processFilters(filters));
 		}
 		const result = await odooJson2Request.call(
@@ -347,7 +382,9 @@ export async function odooGetAll(
 	const db = odooGetDBName(credentials.database, url);
 	const password = getOdooPassword(credentials);
 	const userID = await odooJsonRpcLogin.call(this, db, credentials.username, password, url);
-	const domain = filters?.filter?.length ? processFilters(filters) : [];
+	const domain = rawDomain && rawDomain.trim()
+		? JSON.parse(rawDomain) as unknown[][]
+		: (filters?.filter?.length ? processFilters(filters) : []);
 	const fields = fieldsList && fieldsList.length > 0 ? fieldsList : [];
 	const body = buildJsonRpcBody(db, userID, password, model, 'search_read', [
 		domain,

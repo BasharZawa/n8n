@@ -69,6 +69,15 @@ export const customModelDescription: INodeProperties[] = [
 	makeReturnAllField('custom'),
 	makeLimitField('custom'),
 	makeFilterFields('custom'),
+	{
+		displayName: 'Raw Domain',
+		name: 'rawDomain',
+		type: 'string',
+		default: '',
+		placeholder: '[["field", "=", "value"]]',
+		description: 'Odoo domain as a JSON array expression. When set, overrides the Filter fields above.',
+		displayOptions: { show: { operation: ['getAll'], resource: ['custom'] } },
+	},
 	makeFieldsOptions('custom'),
 
 	// ── update ──
