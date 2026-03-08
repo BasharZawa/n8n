@@ -8,8 +8,11 @@
 			"type": "node",
 			"request": "launch",
 			"name": "Jest: current file",
+			"runtimeExecutable": "/home/bashar/.nvm/versions/node/v24.13.0/bin/node",
 			"program": "${workspaceFolder}/node_modules/.bin/jest",
-			"args": ["${fileBasenameNoExtension}"],
+			"args": [
+				"${fileBasenameNoExtension}"
+			],
 			"console": "integratedTerminal",
 			"windows": {
 				"program": "${workspaceFolder}/node_modules/jest/bin/jest"
@@ -19,32 +22,46 @@
 			"name": "Attach to running n8n",
 			"processId": "${command:PickProcess}",
 			"request": "attach",
-			"skipFiles": ["<node_internals>/**"],
+			"skipFiles": [
+				"<node_internals>/**"
+			],
 			"type": "node"
 		},
 		{
 			"name": "Launch n8n with debug",
+			"runtimeExecutable": "/home/bashar/.nvm/versions/node/v24.13.0/bin/node",
 			"program": "${workspaceFolder}/packages/cli/bin/n8n",
 			"cwd": "${workspaceFolder}/packages/cli/bin",
 			"request": "launch",
-			"skipFiles": ["<node_internals>/**"],
+			"skipFiles": [
+				"<node_internals>/**"
+			],
 			"type": "node",
 			"outputCapture": "std",
 			"killBehavior": "forceful",
+			"envFile": "${workspaceFolder}/.env",
 			"env": {
-				"N8N_CUSTOM_EXTENSIONS": "${workspaceFolder}/n8n-nodes-odoo-generic"
+				"N8N_CUSTOM_EXTENSIONS": "${workspaceFolder}/custom-nodes/n8n-nodes-odoo-generic",
+				"N8N_RUNNERS_ENABLED": "false"
 			}
 		},
 		{
 			"name": "Launch n8n CLI dev with debug",
 			"runtimeExecutable": "pnpm",
 			"cwd": "${workspaceFolder}/packages/cli",
-			"runtimeArgs": ["run", "buildAndDev", "--", "--inspect-brk"],
+			"runtimeArgs": [
+				"run",
+				"buildAndDev",
+				"--",
+				"--inspect-brk"
+			],
 			"console": "integratedTerminal",
 			"restart": true,
 			"autoAttachChildProcesses": true,
 			"request": "launch",
-			"skipFiles": ["<node_internals>/**"],
+			"skipFiles": [
+				"<node_internals>/**"
+			],
 			"type": "node",
 			"envFile": "${workspaceFolder}/.env",
 			"outputCapture": "std",
@@ -71,7 +88,9 @@
 			"address": "localhost",
 			"localRoot": "${workspaceFolder}/packages/cli",
 			"remoteRoot": "/usr/local/lib/node_modules/n8n",
-			"skipFiles": ["<node_internals>/**"],
+			"skipFiles": [
+				"<node_internals>/**"
+			],
 			"restart": true,
 			"sourceMaps": true,
 			"resolveSourceMapLocations": [
@@ -88,7 +107,6 @@
 			}
 		}
 	]
-
 	/**
 		How this works:
 

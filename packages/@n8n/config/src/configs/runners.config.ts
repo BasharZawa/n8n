@@ -8,6 +8,10 @@ export type TaskRunnerMode = z.infer<typeof runnerModeSchema>;
 
 @Config
 export class TaskRunnersConfig {
+	/** Whether the task runner (for example, for Code node) is enabled. */
+	@Env('N8N_RUNNERS_ENABLED')
+	enabled: boolean = false;
+
 	/**
 	 * How the task runner runs: `internal` (child process of n8n) or `external` (separate process).
 	 */

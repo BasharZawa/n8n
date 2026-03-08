@@ -361,16 +361,16 @@ export async function odooGetAll(
 	const protocol = await resolveProtocol.call(this, credentials);
 	const url = normalizeUrl(credentials.url);
 
-	// rawDomain with OR conditions isn't reliably handled by JSON-2 REST query params,
-	// so fall back to JSON-RPC for complex domain searches.
-	if (protocol === 'json2' && !rawDomain?.trim()) {
+	if (protocol === 'json2') {
 		const qs: IDataObject = {};
 		if (fieldsList && fieldsList.length > 0) {
 			qs.fields = fieldsList.join(',');
 		}
 		if (limit > 0) qs.limit = limit;
 		if (offset > 0) qs.offset = offset;
-		if (filters?.filter?.length) {
+		if (rawDomain?.trim()?.startsWith('[')) {
+			qs.domain = rawDomain.trim();
+		} else if (filters?.filter?.length) {
 			qs.domain = JSON.stringify(processFilters(filters));
 		}
 		const result = await odooJson2Request.call(
@@ -382,15 +382,25 @@ export async function odooGetAll(
 	const db = odooGetDBName(credentials.database, url);
 	const password = getOdooPassword(credentials);
 	const userID = await odooJsonRpcLogin.call(this, db, credentials.username, password, url);
-	const domain = rawDomain && rawDomain.trim()
-		? JSON.parse(rawDomain) as unknown[][]
-		: (filters?.filter?.length ? processFilters(filters) : []);
+	let domain: unknown[][];
+	const trimmedDomain = rawDomain?.trim();
+	if (trimmedDomain && trimmedDomain.startsWith('[')) {
+		try {
+			domain = JSON.parse(trimmedDomain) as unknown[][];
+		} catch (error) {
+			throw new NodeApiError(this.getNode(), error as JsonObject, {
+				message: `Invalid JSON in "Raw Domain" field: ${(error as Error).message}. Provide a valid Odoo domain array, e.g. [["status", "=", "done"]].`,
+			});
+		}
+	} else {
+		domain = filters?.filter?.length ? processFilters(filters) : [];
+	}
 	const fields = fieldsList && fieldsList.length > 0 ? fieldsList : [];
 	const body = buildJsonRpcBody(db, userID, password, model, 'search_read', [
 		domain,
 		fields,
 		offset,
-		limit,
+		limit > 0 ? limit : 0,
 	]);
 	const result = await odooJsonRpcRequest.call(this, body, url);
 	return Array.isArray(result) ? result : [result as IDataObject];
