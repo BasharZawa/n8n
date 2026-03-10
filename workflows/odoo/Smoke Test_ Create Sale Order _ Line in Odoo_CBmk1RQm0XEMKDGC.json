@@ -1,0 +1,113 @@
+{
+  "id": "CBmk1RQm0XEMKDGC",
+  "name": "Smoke Test: Create Sale Order + Line in Odoo",
+  "active": false,
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "trigger-1",
+      "name": "Press to Run"
+    },
+    {
+      "parameters": {
+        "resource": "saleOrder",
+        "operation": "create",
+        "fieldsJson": "{\n  \"partner_id\": 10,\n  \"user_id\": 2,\n  \"client_order_ref\": \"SMOKE-TEST-001\",\n  \"note\": \"Created by n8n smoke test\"\n}"
+      },
+      "type": "CUSTOM.odooGeneric",
+      "typeVersion": 1,
+      "position": [
+        250,
+        0
+      ],
+      "id": "odoo-create-so",
+      "name": "Create Sale Order",
+      "credentials": {
+        "odooGenericApi": {
+          "id": "oZpHSPOSuZ6d90qa",
+          "name": "Odoo Generic account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "customModel",
+        "operation": "create",
+        "customModel": "sale.order.line",
+        "fieldsToCreateOrUpdate": {
+          "fields": [
+            {
+              "fieldName": "order_id",
+              "fieldValue": "={{ $json.id }}"
+            },
+            {
+              "fieldName": "product_id",
+              "fieldValue": "53"
+            },
+            {
+              "fieldName": "product_uom_qty",
+              "fieldValue": "5"
+            },
+            {
+              "fieldName": "price_unit",
+              "fieldValue": "0.2"
+            },
+            {
+              "fieldName": "name",
+              "fieldValue": "Screw x5 (smoke test)"
+            }
+          ]
+        }
+      },
+      "type": "CUSTOM.odooGeneric",
+      "typeVersion": 1,
+      "position": [
+        500,
+        0
+      ],
+      "id": "odoo-add-line",
+      "name": "Add Order Line (Screw x5)",
+      "credentials": {
+        "odooGenericApi": {
+          "id": "oZpHSPOSuZ6d90qa",
+          "name": "Odoo Generic account"
+        }
+      }
+    }
+  ],
+  "connections": {
+    "Press to Run": {
+      "main": [
+        [
+          {
+            "node": "Create Sale Order",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create Sale Order": {
+      "main": [
+        [
+          {
+            "node": "Add Order Line (Screw x5)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "callerPolicy": "workflowsFromSameOwner",
+    "availableInMCP": false
+  }
+}

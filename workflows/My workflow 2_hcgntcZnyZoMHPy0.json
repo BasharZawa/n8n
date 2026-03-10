@@ -1,0 +1,81 @@
+{
+  "id": "hcgntcZnyZoMHPy0",
+  "name": "My workflow 2",
+  "active": false,
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -224,
+        -16
+      ],
+      "id": "5ce4357b-6aeb-4882-93eb-96e5129ca710",
+      "name": "When clicking \u2018Execute workflow\u2019"
+    },
+    {
+      "parameters": {
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.odoo",
+      "typeVersion": 1,
+      "position": [
+        96,
+        -16
+      ],
+      "id": "3b152a4b-6062-493e-ac8c-c20e529027c3",
+      "name": "Create a contact"
+    },
+    {
+      "parameters": {
+        "operation": "get",
+        "getBy": "name",
+        "options": {}
+      },
+      "type": "CUSTOM.odooGeneric",
+      "typeVersion": 1,
+      "position": [
+        304,
+        -16
+      ],
+      "id": "fc2b8bb1-156c-4343-b5c7-56cbd49962e2",
+      "name": "Get a contact",
+      "credentials": {
+        "odooGenericApi": {
+          "id": "oZpHSPOSuZ6d90qa",
+          "name": "Odoo Generic account"
+        }
+      }
+    }
+  ],
+  "connections": {
+    "When clicking \u2018Execute workflow\u2019": {
+      "main": [
+        [
+          {
+            "node": "Create a contact",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create a contact": {
+      "main": [
+        [
+          {
+            "node": "Get a contact",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate",
+    "availableInMCP": false
+  }
+}

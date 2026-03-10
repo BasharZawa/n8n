@@ -1,0 +1,340 @@
+{
+  "id": "w2pra3QgHCs4Oohx",
+  "name": "Webhook \u2192 Odoo Sale Order + Lines",
+  "active": true,
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "odoo-sale-order",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        -672,
+        -16
+      ],
+      "id": "webhook-1",
+      "name": "Webhook",
+      "webhookId": "odoo-sale-order"
+    },
+    {
+      "parameters": {
+        "operation": "get",
+        "getBy": "name",
+        "contactName": "={{ $json.body.customerName }}",
+        "options": {}
+      },
+      "type": "CUSTOM.odooGeneric",
+      "typeVersion": 1,
+      "position": [
+        -480,
+        -16
+      ],
+      "id": "get-contact",
+      "name": "Get Contact by Name",
+      "credentials": {
+        "odooGenericApi": {
+          "id": "oZpHSPOSuZ6d90qa",
+          "name": "Odoo Generic account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "saleOrder",
+        "fieldsToCreateOrUpdate": {
+          "fields": [
+            {
+              "fieldName": "partner_id",
+              "fieldValue": "={{ $(\"Get Contact by Name\").item.json.id }}"
+            },
+            {
+              "fieldName": "client_order_ref",
+              "fieldValue": "={{ $('Webhook').item.json.body.clientOrderRef }}"
+            }
+          ]
+        }
+      },
+      "type": "CUSTOM.odooGeneric",
+      "typeVersion": 1,
+      "position": [
+        -304,
+        -16
+      ],
+      "id": "create-so",
+      "name": "Create Sale Order",
+      "credentials": {
+        "odooGenericApi": {
+          "id": "oZpHSPOSuZ6d90qa",
+          "name": "Odoo Generic account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "custom",
+        "customModel": "product.product",
+        "operation": "getAll",
+        "returnAll": true,
+        "filterRequest": {
+          "filter": [
+            {
+              "fieldName": "default_code",
+              "operator": "in",
+              "value": "={{ $('Webhook').first().json.body.orderLines.map(l => (l.productCode || '').trim()).join(',') }}"
+            }
+          ]
+        },
+        "rawDomain": "={{ (() => { \n\nconst codes = $('Webhook').first().json.body.orderLines.map(l => (l.productCode || '').trim()); \n\n\nreturn codes\n})\n\n()}}\n\n\n",
+        "options": {
+          "fieldsList": [
+            "id",
+            "default_code",
+            "name"
+          ]
+        }
+      },
+      "type": "CUSTOM.odooGeneric",
+      "typeVersion": 1,
+      "position": [
+        -128,
+        -16
+      ],
+      "id": "search-products",
+      "name": "Search Products",
+      "credentials": {
+        "odooGenericApi": {
+          "id": "oZpHSPOSuZ6d90qa",
+          "name": "Odoo Generic account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const lines = $('Webhook').first().json.body.orderLines;\nconst soId = $('Create Sale Order').first().json.id;\nconst products = $('Search Products').all().map(i => i.json);\n\nreturn lines.map(line => {\n  const code = (line.productCode || '').trim();\n  const product = products.find(p => (p.default_code || '').trim() === code)\n      || products.find(p => p.name && p.name.toLowerCase().includes(code.toLowerCase()));\n  if (!product) throw new Error(`Product not found: \"${code}\"`);\n  return {\n    json: {\n      order_id: soId,\n      product_id: product.id,\n      product_uom_qty: line.quantity,\n      price_unit: line.priceUnit,\n      discount: line.discount || 0,\n      name: line.description || product.name,\n    }\n  };\n});"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        48,
+        -16
+      ],
+      "id": "prepare-lines",
+      "name": "Prepare Lines"
+    },
+    {
+      "parameters": {
+        "resource": "custom",
+        "customModel": "sale.order.line",
+        "fieldsToCreateOrUpdate": {
+          "fields": [
+            {
+              "fieldName": "order_id",
+              "fieldValue": "={{ $json.order_id }}"
+            },
+            {
+              "fieldName": "product_id",
+              "fieldValue": "={{ $json.product_id }}"
+            },
+            {
+              "fieldName": "product_uom_qty",
+              "fieldValue": "={{ $json.product_uom_qty }}"
+            },
+            {
+              "fieldName": "price_unit",
+              "fieldValue": "={{ $json.price_unit }}"
+            },
+            {
+              "fieldName": "discount",
+              "fieldValue": "={{ $json.discount }}"
+            },
+            {
+              "fieldName": "name",
+              "fieldValue": "={{ $json.name }}"
+            }
+          ]
+        }
+      },
+      "type": "CUSTOM.odooGeneric",
+      "typeVersion": 1,
+      "position": [
+        224,
+        -16
+      ],
+      "id": "create-line",
+      "name": "Create Order Line",
+      "credentials": {
+        "odooGenericApi": {
+          "id": "oZpHSPOSuZ6d90qa",
+          "name": "Odoo Generic account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "custom",
+        "customModel": "sale.order",
+        "operation": "executeMethod",
+        "methodName": "action_confirm",
+        "recordId": "={{ $('Create Sale Order').first().json.id }}"
+      },
+      "type": "CUSTOM.odooGeneric",
+      "typeVersion": 1,
+      "position": [
+        400,
+        -16
+      ],
+      "id": "confirm-so",
+      "name": "Confirm Order",
+      "credentials": {
+        "odooGenericApi": {
+          "id": "oZpHSPOSuZ6d90qa",
+          "name": "Odoo Generic account"
+        }
+      },
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "resource": "saleOrder",
+        "operation": "update",
+        "saleOrderId": "={{ $('Create Sale Order').first().json.id }}",
+        "fieldsToCreateOrUpdate": {
+          "fields": [
+            {
+              "fieldName": "date_order",
+              "fieldValue": "={{ $('Webhook').first().json.body.dateOrder }}"
+            }
+          ]
+        }
+      },
+      "type": "CUSTOM.odooGeneric",
+      "typeVersion": 1,
+      "position": [
+        576,
+        -16
+      ],
+      "id": "update-so",
+      "name": "Update Sale Order",
+      "credentials": {
+        "odooGenericApi": {
+          "id": "oZpHSPOSuZ6d90qa",
+          "name": "Odoo Generic account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ JSON.stringify({ success: true, sale_order_id: $(\"Create Sale Order\").first().json.id, confirmed: true, lines_created: $(\"Create Order Line\").all().length }) }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [
+        752,
+        -16
+      ],
+      "id": "respond-1",
+      "name": "Respond to Webhook"
+    }
+  ],
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Get Contact by Name",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Contact by Name": {
+      "main": [
+        [
+          {
+            "node": "Create Sale Order",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create Sale Order": {
+      "main": [
+        [
+          {
+            "node": "Search Products",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Search Products": {
+      "main": [
+        [
+          {
+            "node": "Prepare Lines",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Prepare Lines": {
+      "main": [
+        [
+          {
+            "node": "Create Order Line",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create Order Line": {
+      "main": [
+        [
+          {
+            "node": "Confirm Order",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Confirm Order": {
+      "main": [
+        [
+          {
+            "node": "Update Sale Order",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Update Sale Order": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "callerPolicy": "workflowsFromSameOwner",
+    "availableInMCP": true
+  }
+}

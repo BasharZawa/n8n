@@ -1,0 +1,56 @@
+{
+  "id": "OynUB9Kkon2bfTnx",
+  "name": "My workflow",
+  "active": false,
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "bcb780e1-173f-4d6e-b362-90ff87134c50",
+      "name": "When clicking \u2018Execute workflow\u2019"
+    },
+    {
+      "parameters": {
+        "resource": "saleOrder",
+        "additionalFields": {}
+      },
+      "type": "CUSTOM.odooGeneric",
+      "typeVersion": 1,
+      "position": [
+        208,
+        0
+      ],
+      "id": "106ff9c6-d773-4538-ae57-ac20330b656c",
+      "name": "Create a sale order",
+      "credentials": {
+        "odooGenericApi": {
+          "id": "oZpHSPOSuZ6d90qa",
+          "name": "Odoo Generic account"
+        }
+      }
+    }
+  ],
+  "connections": {
+    "When clicking \u2018Execute workflow\u2019": {
+      "main": [
+        [
+          {
+            "node": "Create a sale order",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate",
+    "availableInMCP": false
+  }
+}
